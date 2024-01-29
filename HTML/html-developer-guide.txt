@@ -1,0 +1,211 @@
+HTML - Hypertext Markup Language
+      -> html has collections of pre-defined tags.
+      -> it use to create basic structure of webpage.
+      -> html tags has limited property and value due to this limitation css is required.
+
+            Responsive webpage =  HTML(tags) + CSS(property + vlaue)
+-------------------------------
+TAG
+  <> open tag
+  </> close tag
+
+Type of tags?
+  1. Input tags - it used to collect input from user.
+  2. Output tags - it used to display output to user.
+
+Structure of html tags?
+  1. dependent tag - those tags that open and close separate. 
+      example:
+          <html> </html>
+          <body> </body>
+          <h1> </h1>
+
+  2. independent tag / self closing - those tags open and close in one tag.
+      example:
+          <br>
+          <hr>
+      ---self closing---
+          <br />
+          <hr />
+---------------------------------
+RESPONSIVE DESIGN
+Behaviour of HTML tags?
+  1. block level tag - those tags that print statement in new line by default.
+  2. inline tag - those tags that print statement in same line (side by side) by default.
+
+Using CSS
+  -> Inline tag will convert into block level tag also
+  -> block level tag will convert into inline tag.
+
+This process is called responsive webpage design.
+-----------------------------------
+
+What are the valid extensions of html document?
+  .html - it is best for digital marketing / SEO(search engine optimisation) friendly 
+  .htm - not as good as .html
+----------------------------------------------------------------------------------------------------
+
+16-01-2024
+Structure of html document:
+  -> html start to html end is called as document.
+  -> html document will divide into 2 sections:
+    ->head
+      - library section
+        ->css
+        ->javascript
+        ->webpage analytics
+      - marketing (digital marketing)
+    ->body
+      ->All the information for users
+      -> Contents with suitable html tags
+-----------------------------------------
+
+  -> h1 to h6 - it is called heading tags.
+                it use to create the headine of the webpage.
+                use h1 min and max 1 time in every page.
+                h2 to h6 no any certain rule like h1.
+------------------------------------------
+
+  -> p - it use to display text data more than 130 char.
+  -> string formatting tags (0-130 char)
+      ->b,
+      ->i,
+      ->u,
+      ->strong
+      ->font
+      ->em
+----------------------------------------------------------------------------------------------
+
+19-01-2024
+  -> type of list in html
+    -> ol - order list (5 types)
+            type='1'
+            type='A'
+            type='a'
+            type='I'
+            type='i'
+
+    -> ul - unordered list (4 types)
+            type='disc'
+            type='circle'
+            type='square'
+            type='none'
+
+    -> dl - definition list
+            dt - definition title
+              -> It use to display title of content.
+            dd - definition details
+              -> it use to display details about the content.
+--------------------------------------------------------------------------------------------------
+
+=> Table in HTML
+
+    1st method: not supported by angular or react 
+        -> Table 
+            -> Caption
+            -> tr - table row
+                ->th - table heading
+                ->td - table data                
+--------------------------------------------
+20-01-2024
+    2nd Method: Supported by angular or react
+        -> Table
+            -> thead
+                ->tr
+                    ->th
+            ->tbody
+                ->tr
+                    ->td
+            ->tfoot
+                ->tr
+                    ->td
+------------------------------------------------
+
+List of properties in table, tr, th, td
+
+-> align - left, center, right
+-> valign - top, middle, bottom
+-> border - 
+-> cellspacing - it apply space out side of th, td
+-> cellpaddding -  it apply space inside of th, td
+-> colspan - it use to combine space of 2 or more th or td (left to right)
+-> rowspan - it use to combine space of 2 or more tr (top to botttom)
+
+-------------------------------------------------------------------------------------------------
+22-01-2024
+=> How to link the pages:
+    <a href="" target="" title="" class="" id=""> Text to Click</a>
+
+    -> a is tag name - called anchor tag
+     -> href - is an attribute - it used to set path of next page
+     -> target - is an attribute - it is used to set location for next file that where it will open 
+                 it is of 7 types (but 6 methods are useful)
+     -> title - it is for google search / digital marketing
+     -> id + class -  it used to connect html with css and javascript
+----------------------------------------------------
+23-01-2024
+Types of Target:
+
+---using HTML---
+  1. _self - it will open next in same tab.
+  2. _blank - it will open next page in new tab on every click.
+  3. _new - it will open next page in new tab but only at first click.
+
+---using javascript---
+  4. _parent
+  5. _child
+
+---HTML frameset---
+  6. user-defined - we can create our own target.
+  7. _top - it connect through master page in frameset.
+  ------------------------------------------------------------------------------------------------
+24-01-2024
+Input Elements
+  -> text 
+  -> number
+  -> email
+  -> password
+
+  -> textarea - for multi line input
+  -> file - to upload any type of file 1 or multiple
+  -> select - to choose one or more than one from the given option 
+  -> date - to choose any date from date picker/calendar
+  -> datetime-locale - choose any date with hour:minute am,pm 
+  -> radio - to choose any one from the given option (example: male/female) 
+  -> checkbox - to cho0se one or more
+  -> button - 3 types
+      1. submit - for synchronous call
+      2. button - for asynchronous call
+      3. reset - to clear form data 
+
+------------------------------------------------------
+List of property in input elements:
+
+  -> placeholder - it is for input guidance
+  -> maxlength - it use to set maximum limit of input in character (text,email,password,textarea)
+  -> size - it use to set the width of (text,email,password)
+  -> value - it use to display default value in input elements
+  -> readonly - it make input elements read only - unable to edit
+  -> disabled -  it lock the input element - 
+  -> tabindex - it used to set the sequence of cursor 
+-----------------------------------------------------------------------------------------------------
+26-01-2024
+
+------- form --------
+  -> name    - it is used to create container in HTML that hold the value given by user.
+  -> action  - it is a property of form tag:
+               it used to set url, path of backed language where we need to submit the form data .
+  -> method  - it is a property of form tag:
+               it used to set the type of data communication.
+               -> get    - it pass data via browser url & fully visible. -> it is unsecure method 
+               -> post   - it pass data via browser url & not visible (hidden) -> it is secure method 
+               -> put    - ...After JS
+               -> patch  - ...After JS
+               -> delete - ...After JS
+  -> enctype - it is used to encode the attached files / document while uploading to the server 
+-------------------------------------------------------------------------------------------------------
+29-01-2024
+
+
+
+
