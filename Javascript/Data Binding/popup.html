@@ -3,18 +3,48 @@
 
 <head>
   <script>
+
     const one = () => {
       alert("Hi, your email sent successfully !");
     }
+
+    const two = () => {
+      let a = confirm("Are you sure ?");
+      alert(a);
+    }
+
+    const three = () => {
+      let a = prompt("Enter your Email-Id to send download link.");
+      alert("Download link sent to: " + a);
+    }
+
   </script>
 </head>
 
 <body align="center">
+
   <h1> Popup Window In JavaScript. </h1>
+
   <p>
     Alert() - It use to give configuration message to user.
   </p>
+
   <button onclick="one()"> Alert - Click </button>
+
+  <p>
+    Confirm() - It use to ask confirmation from user.
+    "ok" -> True.
+    "cancel" -> False
+  </p>
+
+  <button onclick="two()"> Confirm - Delete </button>
+
+  <p>
+    prompt() - It use to collect non boolean input from user.
+  </p>
+
+  <button onclick="three()"> Prompt - Download File </button>
+
 </body>
 
 </html>
