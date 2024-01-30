@@ -62,8 +62,8 @@ console.log("-----------Switch Case------------")
 
 /*
   if use to check
-    1. range condition
-    2. exact condition -> if ( a == b ) , if ( a === b )
+    1. range condition -> if ( a == b ) 
+    2. exact condition -> if ( a === b )
 
   switch case - use to check
     - only exact condition -> if( a === b ) only
