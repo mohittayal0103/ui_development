@@ -10,5 +10,5 @@ What is the diff bw foreach map and filter?
 
 This is called listing function in javascript.
 it is specially designed for array purpose, we can read and print the data from array.
-if ia m writing only js in that case there is no diff bw all three functions
+if i am writing only js in that case there is no diff bw all three functions
 but in frameworks they differ by there uses.
