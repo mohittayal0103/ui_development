@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    const one = () => {
+      // alert("Hi");
+      let a = document.getElementById("fname").value;
+
+      document.getElementById("xyz").innerText = a;
+
+      let left = 100 - a.length;
+
+      document.getElementById("total").innerText = left + " is available out of 100 char.";
+
+    }
+  </script>
+</head>
+
+<body align="center">
+  <h1>.value and .innerText Example in JavaScript with "onkeyup" Property</h1>
+
+  <p>
+    <textarea type="text" id="fname" onkeyup="one()" rows="10" cols="50" maxlength="100"> </textarea>
+  </p>
+
+  <br /><br /><br />
+
+  <p id="xyz"> ? </p>
+  <h1 id="total"> ? </h1>
+</body>
+
+</html>
