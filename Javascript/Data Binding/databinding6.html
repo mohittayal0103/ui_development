@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #container {
+      width: 90%;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      color: blue;
+      font-size: 30px;
+    }
+  </style>
+
+  <script>
+    const one = () => {
+      let temp = "";
+      for (let i = 1; i <= 20; i++) {
+        temp = temp + "<p>" + i + "</p>";
+      }
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    const two = () => {
+      let temp = "";
+      for (let i = 21; i <= 40; i++) {
+        temp = temp + "<p>" + i + "</p>";
+      }
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    const three = () => {
+      let temp = "";
+      for (let i = 1; i <= 40; i = i + 2) {
+        temp = temp + "<p>" + i + "</p>";
+      }
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    const four = () => {
+      let temp = "";
+      for (let i = 2; i <= 40; i = i + 2) {
+        temp = temp + "<p>" + i + "</p>";
+      }
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    const five = () => {
+      let city = ['Pune', 'Mumbai', 'Chennai', 'Patna', 'Bhopal', 'Bangalore', 'Hisar', 'Delhi'];
+      let temp = "";
+      city.map((cityname, index) => {
+        temp = temp + "<p>" + cityname + "</p>";
+      })
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    const six = () => {
+      let books = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6', 'Book7', 'Book8'];
+      let temp = "";
+      books.map((bookname, index) => {
+        temp = temp + "<p>" + bookname + "</p>";
+      })
+      document.getElementById("container").innerHTML = temp;
+    }
+
+    const seven = () => {
+      let user = ['Mohit', 'Mihir', 'Manan', 'Mrinal', 'Mahima', 'Meenakshi', 'Manmeet', 'Manav'];
+      let temp = "";
+      user.map((username, index) => {
+        temp = temp + "<p>" + username + "</p>";
+      })
+      document.getElementById("container").innerHTML = temp;
+    }
+  </script>
+</head>
+
+<body onload="one()">
+  <center>
+    <h1> JavaScript and Loop </h1>
+    <button onclick="one()"> Print 1 to 20 </button>
+    <button onclick="two()"> Print 21 to 40 </button>
+    <button onclick="three()"> Print 1 to 40 Odd Number </button>
+    <button onclick="four()"> Print 1 to 40 Even Number </button>
+    <button onclick="five()"> Print City </button>
+    <button onclick="six()"> Print Books </button>
+    <button onclick="seven()"> Print User </button>
+
+    <br /><br /><br />
+
+    <section id="container"> </section>
+  </center>
+</body>
+
+</html>
