@@ -10,11 +10,14 @@ css = cascading style sheet
   1. inline css
   2. internal css
   3. external css
-  ------------------------------------
-   inline css syntax=>
-            <tagname style="property:value;property2:value;property3:value;></tagname>
-example
-    <button style="color:red; background:blue;">log in</button>
+
+----------------------------------------------------------------------------
+
+    inline css syntax=>
+        <tagname style="property:value;property2:value;property3:value;></tagname>
+
+    example:
+        <button style="color:red; background:blue;">log in</button>
 
     in inline css ?
        > it is 1 to 1 - write css code 1 time and use in html only 1 time
@@ -25,111 +28,127 @@ example
        > code modification will be complex.
        > google search will give low priority
        > page performance will get poor
-------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
 
     -> internal css 
-           ->it is 1 to many css code 1 time and use in html in many time
+        ->it is 1 to many css code 1 time and use in html in many time
 
-           syntax =
-                  selector{
+            syntax =
+                selector{
                     prperty1:value;
-                     prperty2:value;
-                      prperty3:value;
-                  }
+                    prperty2:value;
+                    prperty3:value;
+                }
 
-NOTE - all html tags are called selector in css.
-there are six type of selector in css 
------------------------------------------------------------------------------------------------
+NOTE -  all html tags are called selector in css.
+        there are six type of selector in css 
+
+
+------------------------------------------------------------------------------
+
     >tab selector - example1.html
-      example=>
-           h1{
-                text-align:center;
-                color:blue;
-                font-size:100px;
-            }
-----------------------------------------------------------------------------------------
+    example=>
+                h1{
+                    text-align:center;
+                    color:blue;
+                    font-size:100px;
+                }
+------------------------------------------------------------------------------
+
     >id selector - example2.html
     example=>
-              #block1{
-                color:orange;
-                font-size:40px;
-                text-align:center;
-                padding:50px;
-                margin:50px;
-                background:skyblue;
+                #block1{
+                    color:orange;
+                    font-size:40px;
+                    text-align:center;
+                    padding:50px;
+                    margin:50px;
+                    background:skyblue;
+                }
 
+                #block2{
+                    color:red;
+                    height:100px;
+                    font-size:100px;
+                    text-align:center;
+                    padding:50px;
+                    margin:50px;
+                    background:green;
+                }
 
-            }
-            #block2{
-                color:red;
-                height:100px;
-                font-size:100px;
-                text-align:center;
-                padding:50px;
-                margin:50px;
-               
-                background:green;
-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
     >class selector  example3.html
     example=>
-              .block2{
-                padding:50px;
-                margin:50px;
-                color:purple;
-                font-size:40px;
-                float:left;
-                background:black;
+                .block2{
+                    padding:50px;
+                    margin:50px;
+                    color:purple;
+                    font-size:40px;
+                    float:left;
+                    background:black;
+                }
+------------------------------------------------------------------------------
 
-            }
--------------------------------------------------------------------------------------------------------------------------------------
-    >tag group selector  example4.html
-    example->    h1,p,div{
-                font-style:italic;
-                
-            }
-----------------------------------------------------------------------------------
+    example->   
+                h1,p,div{
+                    font-style:italic;
+                }
+------------------------------------------------------------------------------
+
     >parent child  selector  example5.html
-     example=>
-               #xyz p{
-                width:300px;
-                height: 200px;
-                margin:30px;
-                font-size:30px;
-                text-align: center;
-                background: violet;
-                float:left;
-            }
-    ------------------------------------------------------------------------------------------------------------------------------
+    example=>
+                #xyz p{
+                    width:300px;
+                    height: 200px;
+                    margin:30px;
+                    font-size:30px;
+                    text-align: center;
+                    background: violet;
+                    float:left;
+                }
+-------------------------------------------------------------------------
+
     > attribute selector = it is not in use- it is complex. example6
-    example=>   input[type="text"]{
-                display:block; 
-                height: 35px;
-                margin:30px;
-            }
-    --------------------------------------------------------------------------
+    example=>   
+                input[type="text"]{
+                    display:block; 
+                    height: 35px;
+                    margin:30px;
+                }
+-------------------------------------------------------------------------
+
     h1{}- tag selector
     h1,p{}-group selector
     #abc{}- id selector
     .abc{}- class selector
     #abc h1{}- parent and child selector
     input[type="text"]{}= attribute selector
-    --------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------
 
     css properties and values.
-         height-    3 ways to implement
+         height -  3 ways to implement
+
             height:100px; - it is fixed
             min-feight:100px - the min height is fixed max up to content
             height:auto; - fully based on contents.
 
-            -> default height as auto 
-    ------------------------------------------------------------------------------------------------------------------------------------
-         width-      4 ways
-        width:px;- it is used to fixed
-        width:%; =
-        min-width:px; -
-        max-width:px; -
+            -> default height is auto 
 
-         backgroung- 9 ways     
+--------------------------------------------------------------------------
+
+         width -  4 ways
+
+        width:px;
+        width:%; 
+        min-width:px; 
+        max-width:px; 
+
+---------------------------------------------------------------------------
+
+        backgroung- 9 ways     
         float- it use to convert block level tag to inline tag
         float:right- it print to right to left
         float:left- it print to left to right
