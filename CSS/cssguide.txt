@@ -149,7 +149,19 @@ css properties and values:
 
 ---------------------------------------------------------------------------
 
-    background- 9 ways    
+    background- 9 ways
+
+        background: red;
+        background-color: red;
+        background-color: rgb(100, 125, 80);
+        background-color: rgba(100, 125, 80, 0.7);
+        background-image: linear-gradient(red, green, blue);
+        background-image: linear-gradient(to left, green, blue);
+        background-image: linear-gradient(to right, green, blue);
+        background-image: linear-gradient(to top, green, blue);
+        background-image: url('1.jpg');
+        background-size:  100% 100 %;
+
 
 --------------------------------------------------------------------------- 
 
@@ -170,6 +182,7 @@ css properties and values:
         margin-right:30px
 
     padding- it apply a spce inside a tag.
+
         padding:30px - it apply 30px gap from all the side
         padding-top:30px;- it apply 30px gap from top side
         padding-left:30px;- it apply 30px gap from left side
@@ -186,7 +199,7 @@ css properties and values:
             Dotted
             Dashed
             Double
-            Insert
+            Inset
             Outset
             Ridge
             Groove
@@ -204,8 +217,16 @@ css properties and values:
 
 ------------------------------------------------------------------------------
 
+    Display in CSS 
 
+        display: inline        -> It convert from block level tag to inline, but height and width will not apply.
+        display: inline-block  -> It convert from block level tag to inline where height width will apply.
+        display: none          -> It hide the tag.
+        display: grid          ->
+        display: flex          ->
+        display: block         -> It convert from inline tag to block level tag.
 
+------------------------------------------------------------------------------
 
 <html>
     <head>
