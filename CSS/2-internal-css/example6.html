@@ -1,36 +1,29 @@
-<!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            h1{
+                color:blue;
+                font-size:40px;
+            }
 
-<head>
-  <style>
-    h1 {
-      color: blue;
-      font-size: 40px;
-    }
+            input[type="text"]{
+                display:block; 
+                height: 35px;
+                margin:30px;
+            }
+            input[type="e-mail"], input[type="number"]{
+                display:block; 
+                height: 45px;
+                margin:30px;
+                width:250px;
+            }
 
-    input[type="text"] {
-      display: block;
-      height: 35px;
-      margin: 30px;
-      width: 250px;
-    }
-
-    input[type="email"],
-    input[type="number"] {
-      display: block;
-      height: 35px;
-      margin: 30px;
-      width: 250px;
-    }
-  </style>
-</head>
-
-<body>
-  <h1> Apply CSS Using Attribute Selector </h1>
-
-  Full Name : <input type="text" placeholder="Your Name" />
-  Email Id : <input type="email" placeholder="Your Email Id" />
-  Mobile No : <input type="number" placeholder="Your Mobile No." />
-</body>
-
+        </style>
+    </head>
+    <body>
+        <h1> apply css using attribute selector </h1>
+        full Name:<input type="text" placeholder="your name"/>
+        e-mail:<input type="e=mail" placeholder="your e-mail"/>
+        Mobile :<input type="number" placeholder="your mobile No"/>
+    </body>
 </html>
