@@ -128,18 +128,19 @@ NOTE -  all html tags are called selector in css.
 
 -------------------------------------------------------------------------
 
-    css properties and values.
-         height -  3 ways to implement
+css properties and values:
 
-            height:100px; - it is fixed
-            min-feight:100px - the min height is fixed max up to content
-            height:auto; - fully based on contents.
+    height -  3 ways to implement
 
-            -> default height is auto 
+        height:100px; - it is fixed
+        min-feight:100px - the min height is fixed max up to content
+        height:auto; - fully based on contents.
+
+        -> default height is auto 
 
 --------------------------------------------------------------------------
 
-         width -  4 ways
+    width -  4 ways
 
         width:px;
         width:%; 
@@ -148,32 +149,64 @@ NOTE -  all html tags are called selector in css.
 
 ---------------------------------------------------------------------------
 
-        backgroung- 9 ways     
-        float- it use to convert block level tag to inline tag
+    background- 9 ways    
+
+--------------------------------------------------------------------------- 
+
+    float- it use to convert block level tag to inline tag
+
         float:right- it print to right to left
         float:left- it print to left to right
-       margin- it use apply space outside of a tag
 
-              margin:auto- it print in center
-               margin:30px- it apply 30px gap from top,left,right,button
-               margin-top:30px
-               margin-butyton:30px
-               margin-left:30px
-               margin-right:30px
+---------------------------------------------------------------------------
 
- padding- it apply a spce inside a tag.
-       padding:30px - it apply 30px gap from all the side
-       padding-top:30px;- it apply 30px gap from top side
-       padding-left:30px;- it apply 30px gap from left side
+    margin- it use apply space outside of a tag
 
-       padding-right:30px;- it apply 30px gap from right side
+        margin:auto- it print in center
+        margin:30px- it apply 30px gap from top,left,right,button
+        margin-top:30px
+        margin-butyton:30px
+        margin-left:30px
+        margin-right:30px
 
-       padding-button:30px;- it apply 30px gap from buttonside
+    padding- it apply a spce inside a tag.
+        padding:30px - it apply 30px gap from all the side
+        padding-top:30px;- it apply 30px gap from top side
+        padding-left:30px;- it apply 30px gap from left side
+        padding-right:30px;- it apply 30px gap from right side
+        padding-button:30px;- it apply 30px gap from buttonside
 
-margin apply a space outside where a padding apply a space inside.
+    #margin apply a space outside where a padding apply a space inside.
 
-display;
--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+    Border in css
+        Type Of Border 
+            Solid
+            Dotted
+            Dashed
+            Double
+            Insert
+            Outset
+            Ridge
+            Groove
+
+        Direction Of Border
+            border: All side
+            border-top:
+            border-left:
+            border-right:
+            border-bottom:
+            border:none; -> no border
+
+    example:
+        border: 10px solid red;  -> 10px border all side with color red.
+
+------------------------------------------------------------------------------
+
+
+
+
 <html>
     <head>
         <style>
