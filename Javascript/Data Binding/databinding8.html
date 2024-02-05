@@ -17,6 +17,7 @@
         temp = temp + "<td>" + book.name + "</td>";
         temp = temp + "<td>" + book.price + "</td>";
         temp = temp + "<td>" + book.author + "</td>";
+        temp = temp + "<td> <button onclick=editbook(" + index + ")> Edit </button> </td>"
         temp = temp + "<td> <button onclick=delbook(" + index + ")> Delete </button> </td>";
         temp = temp + "<tr>";
       })
@@ -28,9 +29,16 @@
       let bookprice = document.getElementById("bprice").value;
       let bookauthor = document.getElementById("bauthor").value;
       let newbook = { name: bookname, price: bookprice, author: bookauthor };
-      booklist = booklist.concat(newbook); // Add New Object in Array of Object
-      booklist.splice(0, 0, newbook);
+      // booklist = booklist.concat(newbook); // Add New Object at end of Array of Object
+      if (bookindex > -1) {
+        booklist[bookindex] = newbook; // update value of particular index
+      }
+      else {
+        booklist.splice(0, 0, newbook); // add new element begining of array of object
+      }
+
       getbook();
+      //clear text box
       document.getElementById("bname").value = "";
       document.getElementById("bprice").value = "";
       document.getElementById("bauthor").value = "";
@@ -40,6 +48,15 @@
       booklist.splice(index, 1);
       getbook();
 
+    }
+
+    let bookindex = -1;
+    const editbook = (index) => {
+      let bookinfo = booklist[index];
+      bookindex = index;
+      document.getElementById("bname").value = bookinfo.name;
+      document.getElementById("bprice").value = bookinfo.price;
+      document.getElementById("bauthor").value = bookinfo.author;
     }
   </script>
 </head>
@@ -60,7 +77,8 @@
         <th> Book Name </th>
         <th> Book Price </th>
         <th> Book Author </th>
-        <th> Action </th>
+        <th> Edit </th>
+        <th> Delete </th>
       </tr>
     </thead>
     <tbody id="container1"></tbody>
