@@ -17,16 +17,42 @@
         temp = temp + "<td>" + book.name + "</td>";
         temp = temp + "<td>" + book.price + "</td>";
         temp = temp + "<td>" + book.author + "</td>";
-        temp = temp + "<td> <button> Delete </button> </td>";
+        temp = temp + "<td> <button onclick=delbook(" + index + ")> Delete </button> </td>";
         temp = temp + "<tr>";
       })
       document.getElementById("container1").innerHTML = temp;
+    }
+
+    const save = () => {
+      let bookname = document.getElementById("bname").value;
+      let bookprice = document.getElementById("bprice").value;
+      let bookauthor = document.getElementById("bauthor").value;
+      let newbook = { name: bookname, price: bookprice, author: bookauthor };
+      booklist = booklist.concat(newbook); // Add New Object in Array of Object
+      booklist.splice(0, 0, newbook);
+      getbook();
+      document.getElementById("bname").value = "";
+      document.getElementById("bprice").value = "";
+      document.getElementById("bauthor").value = "";
+    }
+
+    const delbook = (index) => {
+      booklist.splice(index, 1);
+      getbook();
+
     }
   </script>
 </head>
 
 <body align="center" onload="getbook()">
   <h1> Array of Object Add, List, Delete, Search </h1>
+  <br /><br />
+  <p align="center">
+    <input type="text" placeholder="Book Name" id="bname" />
+    <input type="text" placeholder="Book Price" id="bprice" />
+    <input type="text" placeholder="Book Author" id="bauthor" />
+    <button onclick="save()"> Save </button>
+  </p>
   <br /><br />
   <table align="center" cellpadding="10" border="1" cellspacing="0">
     <thead>
