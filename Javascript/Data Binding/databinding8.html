@@ -10,16 +10,19 @@
       { name: "Book4", price: "Price4", author: "Author4" },
     ];
 
-    const getbook = () => {
+    const getbook = (keyword = "") => {
       let temp = "";
+      let k = keyword.toLowerCase();
       booklist.map((book, index) => {
-        temp = temp + "<tr>";
-        temp = temp + "<td>" + book.name + "</td>";
-        temp = temp + "<td>" + book.price + "</td>";
-        temp = temp + "<td>" + book.author + "</td>";
-        temp = temp + "<td> <button onclick=editbook(" + index + ")> Edit </button> </td>"
-        temp = temp + "<td> <button onclick=delbook(" + index + ")> Delete </button> </td>";
-        temp = temp + "<tr>";
+        if (book.name.toLowerCase().match(k) || book.price.toLowerCase().match(k) || book.author.toLowerCase().match(k)) {
+          temp = temp + "<tr>";
+          temp = temp + "<td>" + book.name + "</td>";
+          temp = temp + "<td>" + book.price + "</td>";
+          temp = temp + "<td>" + book.author + "</td>";
+          temp = temp + "<td> <button onclick=editbook(" + index + ")> Edit </button> </td>"
+          temp = temp + "<td> <button onclick=delbook(" + index + ")> Delete </button> </td>";
+          temp = temp + "<tr>";
+        }
       })
       document.getElementById("container1").innerHTML = temp;
     }
@@ -70,6 +73,8 @@
     <button onclick="save()"> Save </button>
   </p>
   <br /><br />
+  <p> Search: <input type="text" placeholder="Search..." onkeyup="getbook(this.value)" /> </p>
+  <br /> <br />
   <table align="center" cellpadding="10" border="1" cellspacing="0">
     <thead>
       <tr>
