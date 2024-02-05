@@ -24,6 +24,13 @@
         document.getElementById("container").innerHTML = temp;
       })
     }
+
+    const save = () => {
+      let objname = document.getElementById("oname").value;
+      obj.push(objname);
+      one();
+      document.getElementById("oname").value = "";
+    }
   </script>
 </head>
 
