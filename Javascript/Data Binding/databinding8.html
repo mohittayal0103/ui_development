@@ -36,8 +36,7 @@
       else {
         booklist.splice(0, 0, newbook); // add new element begining of array of object
       }
-
-      getbook();
+      getbook();  //Reload the list after save      
       //clear text box
       document.getElementById("bname").value = "";
       document.getElementById("bprice").value = "";
@@ -62,7 +61,7 @@
 </head>
 
 <body align="center" onload="getbook()">
-  <h1> Array of Object Add, List, Delete, Search </h1>
+  <h1> Array of Object Add, List, Delete, Search, Update </h1>
   <br /><br />
   <p align="center">
     <input type="text" placeholder="Book Name" id="bname" />
