@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    header {
+      text-align: center;
+      padding: 30px;
+    }
+
+    #container {
+      width: 80%;
+      margin: auto;
+    }
+
+    h1 {
+      color: orangered;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    button:focus {
+      background: red;
+      color: white;
+    }
+  </style>
+
+  <script>
+    const getHome = () => {
+      alert("hi");
+    }
+
+    const getGallery = () => {
+      alert("hello");
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <button onclick="getHome()"> Home </button>
+    <button onclick="getGallery()"> My Gallery </button>
+  </header>
+
+  <section id="container"></section>
+</body>
+
+</html>
