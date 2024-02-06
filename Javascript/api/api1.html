@@ -27,11 +27,19 @@
 
   <script>
     const getHome = () => {
-      alert("hi");
+      fetch("home.html")
+        .then(xyz => xyz.text())
+        .then(homeData => {
+          document.getElementById("container").innerHTML = homeData;
+        })
     }
 
     const getGallery = () => {
-      alert("hello");
+      fetch("gallery.html")
+        .then(xyz => xyz.text())
+        .then(galleryData => {
+          document.getElementById("container").innerHTML = galleryData;
+        })
     }
   </script>
 </head>
