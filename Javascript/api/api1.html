@@ -27,7 +27,7 @@
 
   <script>
     const getHome = () => {
-      fetch("home.html") //Fetch function is a clean that will send request.    
+      fetch("home.html") //Fetch function is clean that will send request.    
         .then(xyz => xyz.text()) // Promise func will active to receive response
         .then(homeData => {      //Capture the promise data and give it to final data
           document.getElementById("container").innerHTML = homeData;
