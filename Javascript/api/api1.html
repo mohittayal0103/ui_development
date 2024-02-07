@@ -42,6 +42,7 @@
       width: 42%;
       display: inline-block;
       vertical-align: top;
+      text-align: left;
     }
   </style>
 
@@ -99,6 +100,43 @@
             temp = temp + "<div class='mycomment'>";
             temp = temp + "<h3>" + blog.title + "</h3>";
             temp = temp + "<p>" + blog.body + "</p>"
+            temp = temp + "</div>";
+          })
+          document.getElementById("container").innerHTML = temp;
+        })
+    }
+
+    const getUser = () => {
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(userArray => {
+          let temp = "";
+          userArray.map((user, index) => {
+            temp = temp + "<div class='mycomment'>";
+            temp = temp + "<h3>" + user.name + "</h3><br/>";
+            temp = temp + "<small> <strong> Username: </strong>" + user.username + "</small> <br/>";
+            temp = temp + "<small> <strong>Email: </strong>" + user.email + "</small> <br/>";
+            temp = temp + "<small> <strong>Address: </strong>" + user.address.street + ", " + user.address.suite + ", " + user.address.city + " - " + user.address.zipcode + "</small><br/>";
+            temp = temp + "<small> <strong>lat: </strong>" + user.address.geo.lat + "  <strong>lng: </strong>" + user.address.geo.lng + "</small><br/>";
+            temp = temp + "<small> <strong>Phone No: </strong>" + user.phone + "</small> <br/>";
+            temp = temp + "<small> <strong>Website: </strong>" + user.website + "</small> <br/>";
+            temp = temp + "<small> <strong>Company Name: </strong>" + user.company.name + "</small> <br/>";
+            temp = temp + "<small>" + user.company.catchPhrase + "</small><br/>";
+            temp = temp + "<small>" + user.company.bs + "</small><br/>";
+            temp = temp + "</div>";
+          })
+          document.getElementById("container").innerHTML = temp;
+        })
+    }
+
+    const getTodos = () => {
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then(response => response.json())
+        .then(todoArray => {
+          let temp = "";
+          todoArray.map((todo, index) => {
+            temp = temp + "<div class='mycomment'>";
+            temp = temp + "<h3>" + todo.title + ": </h3> <label>" + todo.completed + "</label>";
             temp = temp + "</div>";
           })
           document.getElementById("container").innerHTML = temp;
