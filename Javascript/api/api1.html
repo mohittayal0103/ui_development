@@ -11,6 +11,7 @@
     #container {
       width: 80%;
       margin: auto;
+      text-align: center;
     }
 
     h1 {
@@ -22,6 +23,25 @@
     button:focus {
       background: red;
       color: white;
+    }
+
+    .three {
+      display: inline-block;
+      margin: 2%;
+      font-size: 35px;
+      width: 27%;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .mycomment {
+      margin: 2%;
+      padding: 1%;
+      width: 42%;
+      display: inline-block;
+      vertical-align: top;
     }
   </style>
 
@@ -44,10 +64,17 @@
 
     const getComment = () => {
       fetch("https://jsonplaceholder.typicode.com/comments")
-        .then(xyz => xyz.text())
+        .then(xyz => xyz.json())
         .then(commentArray => {
-          alert(commentArray.length);
-          document.getElementById("container").innerHTML = commentArray;
+          let temp = "";
+          commentArray.map((comment, index) => {
+            temp = temp + "<div class='mycomment'>";
+            temp = temp + "<h3>" + comment.name + "</h3>";
+            temp = temp + "<small>" + comment.email + "</small>";
+            temp = temp + "<p>" + comment.body + "</p>";
+            temp = temp + "</div>";
+          })
+          document.getElementById("container").innerHTML = temp;
         })
     }
 
@@ -55,7 +82,11 @@
       fetch("city.json")
         .then(response => response.json())
         .then(cityArray => {
-          alert(cityArray.length);
+          let temp = "";
+          cityArray.map((cityname, index) => {
+            temp = temp + "<p class='three red'>" + cityname + "</p>";
+          })
+          document.getElementById("container").innerHTML = temp;
         })
     }
   </script>
