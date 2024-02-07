@@ -44,10 +44,18 @@
 
     const getComment = () => {
       fetch("https://jsonplaceholder.typicode.com/comments")
-        .then(xyz => xyz.json())
+        .then(xyz => xyz.text())
         .then(commentArray => {
           alert(commentArray.length);
           document.getElementById("container").innerHTML = commentArray;
+        })
+    }
+
+    const getCity = () => {
+      fetch("city.json")
+        .then(response => response.json())
+        .then(cityArray => {
+          alert(cityArray.length);
         })
     }
   </script>
@@ -57,6 +65,7 @@
   <header>
     <button onclick="getHome()"> Home </button>
     <button onclick="getGallery()"> My Gallery </button>
+    <button onclick="getCity()"> My City </button>
     <button onclick="getComment()"> Recent Comment </button>
   </header>
 
