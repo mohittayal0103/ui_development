@@ -5,12 +5,60 @@
   <style>
     .form {
       width: 30%;
-      margin: 2%;
+      margin: 5%;
     }
 
     .table {
       width: 60%;
       margin: 2%;
+    }
+
+    .form1 {
+      border: 3px solid rgb(197, 196, 196);
+      border-radius: 10px;
+      width: auto;
+      height: 600px;
+      text-align: left;
+    }
+
+    table th,
+    td {
+      padding: 10px;
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+
+    table thead {
+      background-color: rgb(211, 171, 171);
+    }
+
+    table thead td {
+      color: brown;
+    }
+
+    input {
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 2px solid rgb(197, 196, 196);
+      width: 250px;
+      height: 30px;
+    }
+
+    select {
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 2px solid rgb(197, 196, 196);
+      width: 250px;
+      height: 30px;
+    }
+
+    button {
+      border: 2px solid rgb(196, 196, 197);
+      background-color: rgb(92, 92, 248);
+      color: antiquewhite;
+      width: 280px;
+      height: 40px;
+      border-radius: 6px;
     }
   </style>
   <script>
@@ -19,11 +67,49 @@
 </head>
 
 <body>
-  <h1> Home Work - 3</h1>
+  <h1 align="center"> Home Work - 3</h1>
+  <hr size="2" color="orangered" />
   <br />
   <br />
   <diV>
-    <div align="left" class="form"></div>
+    <div align="left" class="form">
+      <form>
+        <table class="form1">
+          <thead>
+            <tr>
+              <td> New Transport </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Transport Number <br /> <input type="number" /></td>
+            </tr>
+            <tr>
+              <td> Root Name <br /> <input type="text" /></td>
+            </tr>
+            <tr>
+              <td> Size <br />
+                <select>
+                  <option></option>
+                  <option> Small </option>
+                  <option> Medium </option>
+                  <option> Large </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td> Driver Name <br /> <input type="text" /></td>
+            </tr>
+            <tr>
+              <td> Driver Mobile Number <br /> <input type="number" /></td>
+            </tr>
+            <tr>
+              <th> <button> Save </button> </th>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
     <div align="right" class="table"></div>
   </diV>
 </body>
