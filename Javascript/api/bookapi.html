@@ -13,15 +13,22 @@
           let data = "";
           bookArray.map((book, index) => {
             data = data + "<tr>";
-            data = data + "<td>" + bood.id + "</td>";
-            data = data + "<td>" + bood.name + "</td>";
-            data = data + "<td>" + bood.price + "</td>";
-            data = data + "<td>" + bood.qty + "</td>";
+            data = data + "<td>" + book.id + "</td>";
+            data = data + "<td>" + book.name + "</td>";
+            data = data + "<td>" + book.price + "</td>";
+            data = data + "<td>" + book.qty + "</td>";
             data = data + "<td><button> Delete </button</td>";
             data = data + "</tr>";
           })
           document.getElementById("container").innerHTML = data;
         })
+    }
+
+    const save = () => {
+      let bookName = document.getElementById("bname").value;
+      let bookPrice = document.getElementById("bprice").value;
+      let bookQty = document.getElementById("bqty").value;
+      // alert(bookName + bookPrice + bookQty);
     }
   </script>
 </head>
@@ -33,15 +40,15 @@
       <h1> Enter Book Details </h1>
     </caption>
     <tr>
-      <th> Book Name </th>
+      <th> Book Name: </th>
       <td><input type="text" id="bname" size="35" /></td>
     </tr>
     <tr>
-      <th> Book Price </th>
+      <th> Book Price: </th>
       <td><input type="text" id="bprice" size="35" /></td>
     </tr>
     <tr>
-      <th> Book Quantity </th>
+      <th> Book Qty.: </th>
       <td><input type="text" id="bqty" size="35" /></td>
     </tr>
     <tr>
