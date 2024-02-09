@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+
+  </style>
+  <script>
+    const getbook = () => {
+      fetch("http://localhost:1234/bookapi")
+        .then(response => response.json())
+        .then(bookArray => {
+          let data = "";
+          bookArray.map((book, index) => {
+            data = data + "<tr>";
+            data = data + "<td>" + bood.id + "</td>";
+            data = data + "<td>" + bood.name + "</td>";
+            data = data + "<td>" + bood.price + "</td>";
+            data = data + "<td>" + bood.qty + "</td>";
+            data = data + "<td><button> Delete </button</td>";
+            data = data + "</tr>";
+          })
+          document.getElementById("container").innerHTML = data;
+        })
+    }
+  </script>
+</head>
+
+<body onload="getbook()">
+  <h1 align="center"> Book List </h1>
+  <table align="left" cellpadding="20">
+    <caption>
+      <h1> Enter Book Details </h1>
+    </caption>
+    <tr>
+      <th> Book Name </th>
+      <td><input type="text" id="bname" size="35" /></td>
+    </tr>
+    <tr>
+      <th> Book Price </th>
+      <td><input type="text" id="bprice" size="35" /></td>
+    </tr>
+    <tr>
+      <th> Book Quantity </th>
+      <td><input type="text" id="bqty" size="35" /></td>
+    </tr>
+    <tr>
+      <th colspan="2">
+        <button onclick="save()"> Save Book </button>
+      </th>
+    </tr>
+  </table>
+
+
+  <table align="right" cellpadding="15" border="1">
+    <thead>
+      <tr>
+        <th> Book Id </th>
+        <th> Book name </th>
+        <th> Book Price </th>
+        <th> Book Quantity</th>
+        <th> Action </th>
+      </tr>
+    </thead>
+    <tbody id="container"></tbody>
+  </table>
+</body>
+
+</html>
