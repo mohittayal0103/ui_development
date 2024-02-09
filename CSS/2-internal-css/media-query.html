@@ -26,10 +26,14 @@
 
 
     /* Media Query for small device */
-    @media screen and (min-width:1px) and (max-width:800px) {
+    @media screen and (min-width:1px) and (max-width:600px) {
       h1 {
         color: blue;
         font-size: 40px;
+      }
+
+      section {
+        grid-template-columns: auto;
       }
     }
 
@@ -38,11 +42,26 @@
         color: green;
         font-size: 60px;
       }
+
+      section {
+        grid-template-columns: auto auto;
+      }
+    }
+
+    @media screen and (min-width:900px) and (max-width:1200px) {
+      h1 {
+        color: purple;
+        font-size: 80px;
+      }
+
+      section {
+        grid-template-columns: auto auto auto;
+      }
     }
   </style>
 </head>
 
-<body>
+<body align="center">
   <h1> CSS Media Query </h1>
   <section>
     <div> Banglore </div>
