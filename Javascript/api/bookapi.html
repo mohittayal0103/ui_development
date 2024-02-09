@@ -28,7 +28,20 @@
       let bookName = document.getElementById("bname").value;
       let bookPrice = document.getElementById("bprice").value;
       let bookQty = document.getElementById("bqty").value;
+      let url = "http://localhost:1234/bookapi"
       // alert(bookName + bookPrice + bookQty);
+      let newBook = { name: bookName, price: bookPrice, qty: bookQty };
+      let postData = {
+        headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
+        method: "POST",
+        body: JSON.stringify(newBook) // JSON.stringify -> Will change the data from object/array to Json
+      }
+      fetch(url, postData)
+        .then(response => response.json())
+        .then(bookInfo => {
+          alert(bookName + "Save with Id : " + bookInfo.id);
+          getbook();
+        })
     }
   </script>
 </head>

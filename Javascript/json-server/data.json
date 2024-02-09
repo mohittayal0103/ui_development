@@ -1,11 +1,32 @@
 {
-  "bookapi":[
-    {"id":"1", "name":"JavaScript", "price":"500","qty":"10"}
+  "bookapi": [
+    {
+      "id": "1",
+      "name": "JavaScript",
+      "price": "500",
+      "qty": "10"
+    },
+    {
+      "id": "afa9",
+      "name": "HTML",
+      "price": "600",
+      "qty": "4"
+    }
   ],
-  "userapi":[
-    {"id":"1", "fullname":"Alex", "age":"24 Years", "edu":"MCA",  "exp":"3 Years"}
+  "userapi": [
+    {
+      "id": "1",
+      "fullname": "Alex",
+      "age": "24 Years",
+      "edu": "MCA",
+      "exp": "3 Years"
+    }
   ],
-  "cityapi":[
-    {"id":"1", "cityname":"Bangalore", "user":"1000000"}
+  "cityapi": [
+    {
+      "id": "1",
+      "cityname": "Bangalore",
+      "user": "1000000"
+    }
   ]
 }
