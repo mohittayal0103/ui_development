@@ -43,11 +43,18 @@
           getbook();
         })
     }
+
+    const clearme = () => {
+      document.getElementById("bname").value = "";
+      document.getElementById("bprice").value = "";
+      document.getElementById("bqty").value = "";
+    }
   </script>
 </head>
 
 <body onload="getbook()">
-  <h1 align="center"> Book List </h1>
+  <h1 align="center"> Load, Add, Delete Data in Json Server </h1>
+  <br /><br />
   <table align="left" cellpadding="20">
     <caption>
       <h1> Enter Book Details </h1>
@@ -73,6 +80,9 @@
 
 
   <table align="right" cellpadding="15" border="1">
+    <caption>
+      <h1> Book List </h1>
+    </caption>
     <thead>
       <tr>
         <th> Book Id </th>
