@@ -3,7 +3,21 @@
 
 <head>
   <style>
+    h1 {
+      color: orange;
+      text-align: center;
+    }
 
+    table {
+      border-collapse: collapse;
+    }
+
+    tr,
+    th,
+    td {
+      border: 0.5px solid skyblue;
+      padding: 10px 50px 10px;
+    }
   </style>
   <script>
     const getbook = () => {
@@ -11,7 +25,7 @@
         .then(response => response.json())
         .then(bookArray => {
           let data = "";
-          bookArray.map((book, index) => {
+          bookArray.reverse().map((book, index) => {
             data = data + "<tr>";
             data = data + "<td>" + book.id + "</td>";
             data = data + "<td>" + book.name + "</td>";
@@ -103,9 +117,9 @@
 </head>
 
 <body onload="getbook()">
-  <h1 align="center"> Load, Add, Delete Data in Json Server </h1>
+  <h1 align="center"> List, Add, Delete, Update data in Json Server </h1>
   <br /><br />
-  <table align="left" cellpadding="20">
+  <table align="left" cellpadding="20" style="margin-left: 50px;">
     <caption>
       <h1> Enter Book Details </h1>
     </caption>
@@ -129,7 +143,7 @@
   </table>
 
 
-  <table align="right" cellpadding="15" border="1" style="margin-right: 100px;">
+  <table align="right" cellpadding="15" border="1" style="margin-right: 50px;">
     <caption>
       <h1> Book List </h1>
     </caption>
