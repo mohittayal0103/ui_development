@@ -7,7 +7,7 @@
   </style>
   <script>
     const getbook = () => {
-      fetch("http://localhost:1234/bookapi")
+      fetch("http://localhost:3000/bookapi")
         .then(response => response.json())
         .then(bookArray => {
           let data = "";
@@ -28,7 +28,7 @@
       let bookName = document.getElementById("bname").value;
       let bookPrice = document.getElementById("bprice").value;
       let bookQty = document.getElementById("bqty").value;
-      let url = "http://localhost:1234/bookapi"
+      let url = "http://localhost:3000/bookapi"
       // alert(bookName + bookPrice + bookQty);
       let newBook = { name: bookName, price: bookPrice, qty: bookQty };
       let postData = {

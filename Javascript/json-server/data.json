@@ -17,6 +17,12 @@
       "name": "nodeJS",
       "price": "1000",
       "qty": "15"
+    },
+    {
+      "id": "9b56",
+      "name": "CSS",
+      "price": "2000",
+      "qty": "12"
     }
   ],
   "userapi": [
