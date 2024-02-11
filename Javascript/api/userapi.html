@@ -26,7 +26,7 @@
     }
   </style>
   <script>
-    const getUSer = () => {
+    const getUser = () => {
       fetch("http://localhost:3000/userapi")
         .then(response => response.json())
         .then(userArray => {
@@ -38,7 +38,6 @@
             data = data + "<td>" + user.age + "</td>";
             data = data + "<td>" + user.edu + "</td>";
             data = data + "<td>" + user.exp + "</td>";
-            data = data + "<td>" + user.id + "</td>";
             data = data + "<td> <button> Edit </button> </td>";
             data = data + "<td> <button> Delete </button> </td>";
             data = data + "</tr>";
@@ -46,10 +45,34 @@
           document.getElementById("container").innerHTML = data;
         })
     }
+
+    const save = () => {
+      let userName = document.getElementById("uname").value;
+      let userAge = document.getElementById("uage").value;
+      let userEdu = document.getElementById("uedu").value;
+      let userExp = document.getElementById("uexp").value;
+
+      let url = "http://localhost:3000/userapi";
+      // alert(userName + userAge + userEdu + userExp);
+      let newUser = { fullname: userName, age: userAge, edu: userEdu, exp: userExp };
+      let postData = {
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+        body: JSON.stringify(newUser)
+      }
+      fetch(url, postData)
+        .then(response = response.json())
+        .then(userInfo => {
+          alert(userName + "save with id : " + userInfo.id);
+          getUser();
+        })
+    }
+
+
   </script>
 </head>
 
-<body align="center" onload="getUSer()">
+<body align="center" onload="getUser()">
   <h1> HomeWork 1 </h1>
 
 

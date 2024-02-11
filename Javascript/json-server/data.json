@@ -38,6 +38,13 @@
       "age": "24 Years",
       "edu": "MCA",
       "exp": "3 Years"
+    },
+    {
+      "id": "4a06",
+      "fullname": "Mohit",
+      "age": "24",
+      "edu": "Btech",
+      "exp": "3"
     }
   ],
   "cityapi": [
