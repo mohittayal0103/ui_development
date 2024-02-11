@@ -3,7 +3,8 @@
 
 <head>
   <style>
-    h1 {
+    h1,
+    h2 {
       color: orange;
       text-align: center;
     }
@@ -18,6 +19,11 @@
       border: 0.5px solid skyblue;
       padding: 10px 50px 10px;
     }
+
+    tr,
+    td {
+      text-align: left;
+    }
   </style>
   <script>
 
@@ -28,33 +34,49 @@
   <h1> HomeWork 1 </h1>
 
 
-  <table align="left" cellpadding="15" style="margin-left: 50px;">
+  <table align="Center" cellpadding="15">
     <caption>
       <h2> Add or Update User Details </h2>
     </caption>
     <tr>
       <th> Full Name </th>
-      <td> <input type="text" /> </td>
+      <td> <input type="text" id="uname" /> </td>
     </tr>
     <tr>
       <th> Age </th>
-      <td> <input type="number" /> Years </td>
+      <td> <input type="number" id="uage" /> Years </td>
     </tr>
     <tr>
       <th> Education </th>
-      <td> <input type="text" /></td>
+      <td> <input type="text" id="uedu" /></td>
     </tr>
     <tr>
       <th> Experiance </th>
-      <td> <input type="number" /> Years </td>
+      <td> <input type="number" id="uexp" /> Years </td>
+    </tr>
+    <tr>
+      <th colspan="2" align="center"> <button onclick="save()"> Save </button> </th>
     </tr>
   </table>
 
+  <br /> <br />
 
-  <table align="right" cellpadding="15" style="margin-right: 50px;">
+  <table align="Center" cellpadding="15">
     <caption>
       <h2> User List </h2>
     </caption>
+    <thead>
+      <tr>
+        <th> User Id </th>
+        <th> Full Name </th>
+        <th> Age </th>
+        <th> Education </th>
+        <th> Experience </th>
+        <th> Update </th>
+        <th> Delete </th>
+      </tr>
+    </thead>
+    <tbody id="container"></tbody>
   </table>
 </body>
 
