@@ -26,11 +26,30 @@
     }
   </style>
   <script>
-
+    const getUSer = () => {
+      fetch("http://localhost:3000/userapi")
+        .then(response => response.json())
+        .then(userArray => {
+          let data = "";
+          userArray.map((user, index) => {
+            data = data + "<tr>";
+            data = data + "<td>" + user.id + "</td>";
+            data = data + "<td>" + user.fullname + "</td>";
+            data = data + "<td>" + user.age + "</td>";
+            data = data + "<td>" + user.edu + "</td>";
+            data = data + "<td>" + user.exp + "</td>";
+            data = data + "<td>" + user.id + "</td>";
+            data = data + "<td> <button> Edit </button> </td>";
+            data = data + "<td> <button> Delete </button> </td>";
+            data = data + "</tr>";
+          })
+          document.getElementById("container").innerHTML = data;
+        })
+    }
   </script>
 </head>
 
-<body align="center">
+<body align="center" onload="getUSer()">
   <h1> HomeWork 1 </h1>
 
 
