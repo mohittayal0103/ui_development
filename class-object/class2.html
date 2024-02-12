@@ -4,13 +4,14 @@
 <head>
   <script>
     class Myuser {
-      constructor() {
+      constructor() { //--> Construtor is pre defined not userdefined. Constructor is a lifecycle funtion of javascript.
+        // alert("Constructor"); --> Constructor
         this.product = "Apple";
         this.price = 300;
-        this.city = ['Bangalore', 'Mumbai', 'Chennai', 'Pune', 'Delhi', 'Hisar']
+        this.city = ['Bangalore', 'Mumbai', 'Chennai', 'Pune', 'Delhi', 'Hisar'] //--> Member Variable
       }
 
-      getItem = (qty = 5) => {
+      getItem = (qty = 5) => { // --> Member Function
         let data = "<h2> Item Details </h2>";
         data = data + "<p> Product: " + this.product + "</p>";
         data = data + "<p> Rate: " + this.price + "</p>";
@@ -28,13 +29,25 @@
       }
     }
 
-    const obj1 = new Myuser(); 
+    const obj1 = new Myuser();
+    //obj1 ican be called as object of class Myuser.
+    // alert(this.product); --> Undefined
+    // alert(obj1.product); --> Apple
+
+    //getItem, getCity, this.product can be called as asset of class.
   </script>
 </head>
 
 <body>
   <center>
     <h1> JavaScript Class Object </h1>
+    <p> class ? - The class is a collections of member variable and member functions. </p>
+    <p> Member Variables ? - All the variables of a class get defined under constructor using this operator. </p>
+    <p> Member function ? - All the user defined functions of a class. </p>
+    <p> Assets of a class ? - The member variable and member func of a class. </p>
+    <p> What is this ? - The "this" operator is called object of current class, It work inside the class. </p>
+    <p> Object of a class ? - it is instane of a class, with the help of object we access assets of a class. </p>
+    <p> Extends ? - It use to inherit feature from parent class to child class. </p>
     <br />
     <button onclick="obj1.getItem()"> Print Item </button>
     <button onclick="obj1.getCity()"> Print City </button>
