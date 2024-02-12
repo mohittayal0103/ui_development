@@ -3,14 +3,32 @@
 
 <head>
   <script>
+    class Myuser {
+      constructor() {
+        this.product = "Apple";
+        this.price = 300;
+      }
 
+      getItem = (qty = 5) => {
+        let data = "<h2> Itam Details </h2>";
+        data = data + "<p> Product: " + this.product + "</p>";
+        data = data + "<p> Rate: " + this.price + "</p>";
+        data = data + "<p> Quantity: " + qty + "kg </p>";
+        data = data + "<p> Total Price: " + this.price * qty + "</p>";
+        document.getElementById("container").innerHTML = data;
+      }
+    }
+
+    const obj1 = new Myuser(); 
   </script>
 </head>
 
 <body>
   <center>
     <h1> JavaScript Class Object </h1>
-    <button> Print Below </button>
+    <br />
+    <button onclick="obj1.getItem()"> Print Below </button>
+    <br /><br />
     <section id="container"></section>
   </center>
 </body>
