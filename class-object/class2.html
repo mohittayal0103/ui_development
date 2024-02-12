@@ -7,14 +7,23 @@
       constructor() {
         this.product = "Apple";
         this.price = 300;
+        this.city = ['Bangalore', 'Mumbai', 'Chennai', 'Pune', 'Delhi', 'Hisar']
       }
 
       getItem = (qty = 5) => {
-        let data = "<h2> Itam Details </h2>";
+        let data = "<h2> Item Details </h2>";
         data = data + "<p> Product: " + this.product + "</p>";
         data = data + "<p> Rate: " + this.price + "</p>";
         data = data + "<p> Quantity: " + qty + "kg </p>";
         data = data + "<p> Total Price: " + this.price * qty + "</p>";
+        document.getElementById("container").innerHTML = data;
+      }
+
+      getCity = () => {
+        let data = "<h2> City List </h2>"
+        this.city.map((cityname, index) => {
+          data = data + "<p>" + cityname + "</p>";
+        })
         document.getElementById("container").innerHTML = data;
       }
     }
@@ -27,7 +36,8 @@
   <center>
     <h1> JavaScript Class Object </h1>
     <br />
-    <button onclick="obj1.getItem()"> Print Below </button>
+    <button onclick="obj1.getItem()"> Print Item </button>
+    <button onclick="obj1.getCity()"> Print City </button>
     <br /><br />
     <section id="container"></section>
   </center>
