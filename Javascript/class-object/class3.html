@@ -35,9 +35,14 @@
 
       save = () => {
         let itemName = document.getElementById("newItem").value;
-        this.itemList.unshift(itemName);
-        document.getElementById("newItem").value = "";
-        this.getItem();  // To reload the list
+        if (itemName != "") {
+          this.itemList.unshift(itemName);
+          document.getElementById("newItem").value = "";
+          this.getItem();  // To reload the list
+        }
+        else {
+          alert("Invalid Item Name..!!");
+        }
       }
     }
 
