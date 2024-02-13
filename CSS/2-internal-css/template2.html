@@ -1,0 +1,108 @@
+x<html>
+    <head>
+        
+        <style>
+            body{
+                margin: 0px;
+
+            }
+         @keyframes mybanner{
+            25%{ background-image: url(1.jpeg);font-size: 80px;}
+            50%{ background-image: url(2.jpeg);font-size: 30px;}
+            75%{ background-image: url(4.jpg);font-size: 100px;}
+
+         }
+         footer{
+            background-color: darkblue;
+            padding: 30px;
+            font-size: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+         }
+            #banner{
+                height: 400px;
+                padding: 200px;
+                background-image: url(3.jpeg);
+                background-size: 80% 100% ;
+                color: white;
+                font-size: 100px;
+                text-align: center;
+                animation: mybanner;
+                animation-duration: 10s;
+                animation-iteration-count:infinite;
+            }
+            section{
+                min-height: 700px;
+                text-align: center;
+                padding: 100px; 
+
+            }
+            h1{
+                font-size: 100px;
+            }
+            ul{
+                position: sticky;
+                top: 0px;
+                background-color: black;
+                margin: 0px;
+
+            }
+
+            ul li{
+                display: inline-block;
+                padding: 20px 40px 28px;
+                text-decoration: none;
+            }
+
+
+            html{
+                scroll-behavior: smooth;
+            }
+            #about{
+                background: skyblue;
+                color: white;
+            }
+            #service{
+                background: red;
+                color: black;
+            }
+            #product{
+                background: green;
+                color: white;
+            }
+            #customer{
+                background: pink;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li> <a href="#banner">banner</a></li>
+           <li> <a href="#about">about us</a></li>
+           <li> <a href="#service"> our service</a></li>
+           <li> <a href="#product">our product</a></li>
+           <li> <a href="#customer">our customer</a></li>
+        </ul>
+        <div id="banner">
+            css animation
+        </div>
+        <section id="about">
+            <h1> ABOUT US </h1>
+        </section>
+        <section id="service">
+            <h1> SERVICES </h1>
+        </section>
+        <section id="product">
+            <h1> PRODUCTS </h1>
+        </section>
+        <section id="customer">
+            <h1> CUSTOMER </h1>
+        </section>
+        <footer>
+            help center +91-45755852654
+        </footer>
+    </body>
+</html>
