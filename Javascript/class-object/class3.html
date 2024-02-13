@@ -71,6 +71,13 @@
         this.itemList.splice(index, 1);
         this.getItem();
       }
+
+      edit = () => {
+        this.fullName = prompt("Enter Owner Full Name");
+        this.mobileNo = prompt("Owner Mobile No.");
+        this.age = prompt("Enter Age");
+        this.getItem();
+      }
     }
 
     const obj1 = new Shop();
@@ -86,6 +93,7 @@
   </p>
   <section id="container"></section>
   <section id="owner"></section>
+  <button onclick="obj1.edit()"> Edit Info </button>
 </body>
 
 </html>
