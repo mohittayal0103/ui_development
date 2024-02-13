@@ -3,7 +3,17 @@
 
 <head>
   <style>
+    body {
+      margin: 20px 10% 20px;
+      text-align: center;
+    }
 
+    #container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      font-size: 30px;
+      color: blue;
+    }
   </style>
   <script>
     class Shop {
@@ -18,9 +28,16 @@
       getItem = () => {
         let data = "";
         this.itemList.map((itemName, index) => {
-          data = data + "<p>" + itemName + "<p>";
+          data = data + "<p>" + itemName + "</p>";
         })
         this.printData(data);
+      }
+
+      save = () => {
+        let itemName = document.getElementById("newItem").value;
+        this.itemList.unshift(itemName);
+        document.getElementById("newItem").value = "";
+        this.getItem();  // To reload the list
       }
     }
 
@@ -31,6 +48,10 @@
 
 <body onload="obj1.getItem()">
   <h1> Class Object in JavaScript - Add, List, Delete </h1>
+  <p>
+    Enter New Item Name: <input type="text" id="newItem" />
+    <button onclick="obj1.save()"> Save </button>
+  </p>
   <section id="container"></section>
 </body>
 
