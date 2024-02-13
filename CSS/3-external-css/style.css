@@ -1,5 +1,13 @@
 body {
-  text-align: center;
+  /* text-align: center; */
+  margin: 0px;
+}
+
+ul {
+  top: 0px;
+  position: sticky;
+  margin: 0px;
+  background: purple;
 }
 
 h1 {
@@ -7,6 +15,66 @@ h1 {
   font-size: 70px;
 }
 
-a {
-  font-size: 22px;
+li {
+  display: inline-block;
+  padding: 20px 40px 20px;
+}
+
+li a {
+  font-size: 21px;
+  color: white;
+  text-decoration: none;
+}
+
+li:hover {
+  background: orangered;
+  cursor: pointer;
+}
+
+#active {
+  background-color: orangered;
+}
+
+@keyframes mybanner {
+  25% {
+    background-image: url(1.jpg);
+    font-size: 80px;
+  }
+  50% {
+    background-image: url(2.jpg);
+    font-size: 30px;
+  }
+  75% {
+    background-image: url(4.jpg);
+    font-size: 100px;
+  }
+}
+
+#banner {
+  height: 250px;
+  padding: 100px;
+  background-image: url(3.jpg);
+  background-size: 100% 100%;
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  animation: mybanner;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+header {
+  padding: 5px 10% 5px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+
+.fab {
+  margin-right: 7px;
+}
+
+#container {
+  min-height: 500px;
+  width: 80%;
+  margin: auto;
 }
