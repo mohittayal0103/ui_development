@@ -6,12 +6,32 @@
 
   </style>
   <script>
+    class Shop {
+      constructor() {
+        this.itemList = ["Rice", "Sugar", "Potato", "Onion"]
+      }
+
+      printData = (data) => {
+        document.getElementById("container").innerHTML = data;
+      }
+
+      getItem = () => {
+        let data = "";
+        this.itemList.map((itemName, index) => {
+          data = data + "<p>" + itemName + "<p>";
+        })
+        this.printData(data);
+      }
+    }
+
+    const obj1 = new Shop();
 
   </script>
 </head>
 
-<body>
-  <h1></h1>
+<body onload="obj1.getItem()">
+  <h1> Class Object in JavaScript - Add, List, Delete </h1>
+  <section id="container"></section>
 </body>
 
 </html>
