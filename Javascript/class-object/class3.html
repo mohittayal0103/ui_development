@@ -16,8 +16,21 @@
     }
   </style>
   <script>
-    class Shop {
+
+    class ShopOwner {
       constructor() {
+        this.fullName = "Alex";
+        this.mobileNo = 9999999999;
+        this.city = "Bangalore";
+        this.age = "30 Years";
+        this.pincode = 560037;
+      }
+    }
+
+
+    class Shop extends ShopOwner {                               //inheriting the chil dclass to parent class
+      constructor() {
+        super();                                                 // Constructor of parent Class
         this.itemList = ["Rice", "Sugar", "Potato", "Onion"]
       }
 
@@ -31,6 +44,14 @@
           data = data + "<p>" + itemName + "<br/> <button onclick='obj1.delete(" + index + ")'> Delete </button> </p>";
         })
         this.printData(data);
+
+        let temp = "<h3> Shop Owner Details: </h3>";
+        temp = temp + "<p> Name: " + this.fullName + "</p>";
+        temp = temp + "<p> Mobile No: " + this.mobileNo + "</p>";
+        temp = temp + "<p> City: " + this.city + "</p>";
+        temp = temp + "<p> Age: " + this.age + "</p>";
+        temp = temp + "<p> Pincode: " + this.pincode + "</p>";
+        document.getElementById("owner").innerHTML = temp;
       }
 
       save = () => {
@@ -64,6 +85,7 @@
     <button onclick="obj1.save()"> Save </button>
   </p>
   <section id="container"></section>
+  <section id="owner"></section>
 </body>
 
 </html>
