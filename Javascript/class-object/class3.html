@@ -28,13 +28,13 @@
       getItem = () => {
         let data = "";
         this.itemList.map((itemName, index) => {
-          data = data + "<p>" + itemName + "</p>";
+          data = data + "<p>" + itemName + "<br/> <button onclick='obj1.delete(" + index + ")'> Delete </button> </p>";
         })
         this.printData(data);
       }
 
       save = () => {
-        let itemName = document.getElementById("newItem").value;
+        let itemName = document.getElementById("newItem").value.trim(); // Trim() will remove space from left and right of input
         if (itemName != "") {
           this.itemList.unshift(itemName);
           document.getElementById("newItem").value = "";
@@ -43,6 +43,12 @@
         else {
           alert("Invalid Item Name..!!");
         }
+      }
+
+
+      delete = (index) => {
+        this.itemList.splice(index, 1);
+        this.getItem();
       }
     }
 
