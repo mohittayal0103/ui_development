@@ -55,11 +55,27 @@
     }
 
     const getProj = () => {
-      document.getElementById("ajaxdata").innerHTML = "<h1> My Projects </h1>"
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let projectArray = JSON.stringify(this.responseText); // convert JSON to Array
+          alert(projectArray.length);
+        }
+      };
+      xmlhttp.open("GET", "project.json");
+      xmlhttp.send();
     }
 
     const getBranch = () => {
-      document.getElementById("ajaxdata").innerHTML = "<h1> All Branches </h1>"
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let projectArray = JSON.stringify(this.responseText); // convert JSON to Array
+          alert(projectArray.length);
+        }
+      };
+      xmlhttp.open("GET", "branch.json");
+      xmlhttp.send();
     }
   </script>
 </body>
