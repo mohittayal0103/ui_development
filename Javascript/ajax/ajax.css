@@ -1,0 +1,39 @@
+body {
+  margin: 0px;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+#ajaxdata {
+  width: 80%;
+  margin: auto;
+  min-height: 500px;
+}
+
+button {
+  padding: 8px 40px 8px;
+  color: blue;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: yellow;
+}
+
+button:focus {
+  color: white;
+  background-color: chocolate;
+}
+
+footer {
+  min-height: 150px;
+  background-color: darkcyan;
+  padding: 20px;
+  text-align: center;
+  color: yellow;
+  font-size: 22px;
+}
