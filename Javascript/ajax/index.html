@@ -3,17 +3,15 @@
 
 <head>
   <link rel="stylesheet" href="ajax.css" />
-
-  <script></script>
 </head>
 
 <body>
   <header>
-    <button> Home </button>
-    <button> About Us </button>
-    <button> My Gallery </button>
-    <button> Project </button>
-    <button> Branches </button>
+    <button onclick="getHome()"> Home </button>
+    <button onclick="getAbout()"> About Us </button>
+    <button onclick="getGall()"> My Gallery </button>
+    <button onclick="getProj()"> Project </button>
+    <button onclick="getBranch()"> Branches </button>
   </header>
 
   <section id="ajaxdata"></section>
@@ -21,6 +19,28 @@
   <footer>
     <p> Ajax - Asynchronous JavaScript and XML </p>
   </footer>
+
+  <script>
+    const getHome = () => {
+      document.getElementById("ajaxdata").innerHTML = "<h1> Welcome Home </h1>"
+    }
+
+    const getAbout = () => {
+      document.getElementById("ajaxdata").innerHTML = "<h1> About Us </h1>"
+    }
+
+    const getGall = () => {
+      document.getElementById("ajaxdata").innerHTML = "<h1> My Gallery </h1>"
+    }
+
+    const getProj = () => {
+      document.getElementById("ajaxdata").innerHTML = "<h1> My Projects </h1>"
+    }
+
+    const getBranch = () => {
+      document.getElementById("ajaxdata").innerHTML = "<h1> All Branches </h1>"
+    }
+  </script>
 </body>
 
 </html>
