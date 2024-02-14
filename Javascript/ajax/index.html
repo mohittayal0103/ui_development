@@ -22,15 +22,36 @@
 
   <script>
     const getHome = () => {
-      document.getElementById("ajaxdata").innerHTML = "<h1> Welcome Home </h1>"
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("ajaxdata").innerHTML = this.responseText;
+        }
+      };
+      xmlhttp.open("GET", "home.html");
+      xmlhttp.send();
     }
 
     const getAbout = () => {
-      document.getElementById("ajaxdata").innerHTML = "<h1> About Us </h1>"
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("ajaxdata").innerHTML = this.responseText;
+        }
+      };
+      xmlhttp.open("GET", "about.html");
+      xmlhttp.send();
     }
 
     const getGall = () => {
-      document.getElementById("ajaxdata").innerHTML = "<h1> My Gallery </h1>"
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("ajaxdata").innerHTML = this.responseText;
+        }
+      };
+      xmlhttp.open("GET", "gallery.html");
+      xmlhttp.send();
     }
 
     const getProj = () => {
