@@ -7,6 +7,17 @@
 </head>
 
 <body>
+  <header>
+    <p><i class="fa fa-phone"></i> +91-0000000000</p>
+
+    <p>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-linkedin"></i>
+      <i class="fab fa-instagram"></i>
+    </p>
+  </header>
+
   <ul>
     <li><a href="home.html"> <i class="fa fa-home"></i> Home </a></li>
     <li><a href="service.html"> <i class="fa fa-tools"></i> Our Services </a></li>
@@ -14,7 +25,73 @@
     <li><a href="login.html"> <i class="fa fa-lock"></i> Login </a></li>
     <li id="active"><a href="register.html"> <i class="fa fa-user-plus"></i> Register </a></li>
   </ul>
-  <h1> Register </h1>
+
+
+  <section id="container">
+    <fieldset>
+      <legend> <em class="fa fa-user-plus"></em> Create Account </legend>
+      <i> * Marked fields are mandatory </i>
+      <table>
+        <tr>
+          <th> <i>*</i> Full Name: </th>
+          <td><input type="text" class="smallinput" placeholder="Enter Name" /></td>
+        </tr>
+        <tr>
+          <th> <i>*</i> Gender: </th>
+          <td>
+            <input type="radio" value="male" name="gender" /> Male
+            <input type="radio" value="female" name="gender" /> Female
+          </td>
+        </tr>
+        <tr>
+          <th><i>*</i> E-mail Id: </th>
+          <td><input type="e-mail" class="smallinput" placeholder="Enter E-mail Id" /></td>
+        </tr>
+        <tr>
+          <th> <i>*</i> Mobile No: </th>
+          <td><input type="number" class="smallinput" placeholder="Enter Mobile No." /></td>
+        </tr>
+        <tr>
+          <th> <i>*</i> Password: </th>
+          <td><input type="password" class="smallinput" placeholder="Enter Password" /></textarea></td>
+        </tr>
+        <tr>
+          <th> <i>*</i> City: </th>
+          <td>
+            <select class="smallinput">
+              <option>Choose City</option>
+              <option>Bangalore</option>
+              <option>Chennai</option>
+              <option>Hyderabad</option>
+              <option>Mumbai</option>
+              <option>Pune</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th> <i>*</i> Address: </th>
+          <td>
+            <textarea class="biginput" placeholder="Enter Address..."></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th align="center" colspan="2">
+            <button> Register </button>
+          </th>
+        </tr>
+      </table>
+    </fieldset>
+  </section>
+
+  <footer>
+    <p> Help Center +91-0000000000 </p>
+    <p>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-linkedin"></i>
+      <i class="fab fa-instagram"></i>
+    </p>
+  </footer>
 </body>
 
 </html>
