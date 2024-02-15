@@ -35,6 +35,24 @@ h1 {
   font-size: 70px;
 }
 
+.project {
+  margin: 2%;
+  width: 45%;
+  display: inline-block;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+}
+
+.branch {
+  margin: 2%;
+  width: 45%;
+  display: inline-block;
+  font-size: 25px;
+  color: black;
+  text-align: left;
+}
+
 footer {
   min-height: 150px;
   background-color: darkcyan;
