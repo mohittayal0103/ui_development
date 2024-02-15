@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="ajax.css" />
 </head>
 
-<body>
+<body onload="getHome()">
   <header>
     <button onclick="getHome()"> Home </button>
     <button onclick="getAbout()"> About Us </button>
@@ -22,14 +22,14 @@
 
   <script>
     const getHome = () => {
-      var xmlhttp = new XMLHttpRequest();
+      var xmlhttp = new XMLHttpRequest(); // Create obj of xmlhttprequest class {XMLHttpRequest() - Search on google to get idea}
       xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) { //readystate=4 rand status=200 - Search on google
           document.getElementById("ajaxdata").innerHTML = this.responseText;
         }
       };
-      xmlhttp.open("GET", "home.html");
-      xmlhttp.send();
+      xmlhttp.open("GET", "home.html"); //Generating the URL based on GET method.
+      xmlhttp.send(); // It send request to above generated URL
     }
 
     const getAbout = () => {
@@ -58,8 +58,13 @@
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          let projectArray = JSON.stringify(this.responseText); // convert JSON to Array
-          alert(projectArray.length);
+          let projectArray = JSON.parse(this.responseText); // convert JSON to Array using parse
+          // alert(projectArray.length);
+          let data = "<h1> Project List </p>";
+          projectArray.map((pname, index) => {
+            data = data + "<p class='project'>" + pname + "</p>";
+          })
+          document.getElementById("ajaxdata").innerHTML = data;
         }
       };
       xmlhttp.open("GET", "project.json");
@@ -70,8 +75,13 @@
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          let projectArray = JSON.stringify(this.responseText); // convert JSON to Array
-          alert(projectArray.length);
+          let branchArray = JSON.parse(this.responseText); // convert JSON to Object using parse
+          // alert(branchArray.length);
+          let data = "<h1> Branch List </p>";
+          branchArray.map((branch, index) => {
+            data = data + "<p class='branch'>" + branch.name + ", Call - " + branch.mobile + "</p>";
+          })
+          document.getElementById("ajaxdata").innerHTML = data;
         }
       };
       xmlhttp.open("GET", "branch.json");
