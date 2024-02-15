@@ -1,0 +1,10 @@
+[
+  { "name": "Bangalore", "mobile": 9999999999 },
+  { "name": "Mumbai", "mobile": 88888888888 },
+  { "name": "Pune", "mobile": 11111111111 },
+  { "name": "Hyderabad", "mobile": 2222222222 },
+  { "name": "Chennai", "mobile": 33333333333 },
+  { "name": "Delhi", "mobile": 44444444444 },
+  { "name": "Noida", "mobile": 555555555555 },
+  { "name": "Panchkula", "mobile": 66666666666 }
+]
