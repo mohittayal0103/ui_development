@@ -1,3 +1,31 @@
+@keyframes mybanner {
+  25% {
+    background-image: url(1.jpg);
+    font-size: 80px;
+  }
+  50% {
+    background-image: url(2.jpg);
+    font-size: 30px;
+  }
+  75% {
+    background-image: url(4.jpg);
+    font-size: 100px;
+  }
+}
+
+#banner {
+  height: 250px;
+  padding: 100px;
+  background-image: url(3.jpg);
+  background-size: 100% 100%;
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  animation: mybanner;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
 body {
   /* text-align: center; */
   margin: 0px;
@@ -35,36 +63,8 @@ li:hover {
   background-color: orangered;
 }
 
-@keyframes mybanner {
-  25% {
-    background-image: url(1.jpg);
-    font-size: 80px;
-  }
-  50% {
-    background-image: url(2.jpg);
-    font-size: 30px;
-  }
-  75% {
-    background-image: url(4.jpg);
-    font-size: 100px;
-  }
-}
-
-#banner {
-  height: 250px;
-  padding: 100px;
-  background-image: url(3.jpg);
-  background-size: 100% 100%;
-  color: white;
-  font-size: 100px;
-  text-align: center;
-  animation: mybanner;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-}
-
 header {
-  padding: 5px 10% 5px;
+  padding: 5px 3% 5px;
   display: grid;
   grid-template-columns: 90% 10%;
 }
@@ -77,4 +77,90 @@ header {
   min-height: 500px;
   width: 80%;
   margin: auto;
+}
+
+.homepic {
+  margin: 2%;
+  width: 20%;
+  height: 300px;
+  box-shadow: 0px 0px 10px red;
+}
+
+.homepic:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 40px red;
+}
+
+footer {
+  background-color: darkcyan;
+  padding: 20px;
+  color: yellow;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 5px solid yellow;
+}
+
+.myservice {
+  margin: 2%;
+  padding: 1%;
+  text-align: center;
+  width: 26.33%;
+  display: inline-block;
+  box-shadow: 0px 0px 2px red;
+}
+
+.myservice p {
+  text-align: justify;
+}
+
+.myservice:hover {
+  box-shadow: 0px 0px 20px lightseagreen;
+  cursor: pointer;
+}
+
+fieldset {
+  width: 400px;
+  padding: 30px;
+  margin: 40px auto 0px;
+  text-align: left;
+}
+
+legend {
+  background-color: rebeccapurple;
+  color: azure;
+  font-size: 22px;
+  padding: 5px 20px 5px;
+}
+
+fieldset table {
+  width: 100%;
+}
+
+tr {
+  height: 70px;
+}
+
+.smallinput {
+  width: 100%;
+  height: 28px;
+}
+
+.biginput {
+  width: 100%;
+  height: 80px;
+}
+
+button {
+  background-color: blue;
+  color: beige;
+  padding: 7px 20px 7px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 60%;
+}
+
+fieldset i {
+  color: red;
 }
