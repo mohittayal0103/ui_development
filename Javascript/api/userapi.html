@@ -38,8 +38,8 @@
             data = data + "<td>" + user.age + "</td>";
             data = data + "<td>" + user.edu + "</td>";
             data = data + "<td>" + user.exp + "</td>";
-            data = data + "<td> <button> Edit </button> </td>";
-            data = data + "<td> <button> Delete </button> </td>";
+            data = data + "<td> <button onclick=edituser('"+user.id+"')> Edit </button> </td>";
+            data = data + "<td> <button onclick=deluser('"+user.id+"')> Delete </button> </td>";
             data = data + "</tr>";
           })
           document.getElementById("container").innerHTML = data;
@@ -52,7 +52,8 @@
       let userEdu = document.getElementById("uedu").value;
       let userExp = document.getElementById("uexp").value;
 
-      let url = "http://localhost:3000/userapi";
+      if(userid = ""){
+        let url = "http://localhost:3000/userapi";
       // alert(userName + userAge + userEdu + userExp);
       let newUser = { fullname: userName, age: userAge, edu: userEdu, exp: userExp };
       let postData = {
@@ -66,6 +67,57 @@
           alert(userName + "save with id : " + userInfo.id);
           getUser();
         })
+      }
+      else{
+        let url = "http://localhost:3000/userapi/" + userid;
+        let newUser = { fullname: userName, age: userAge, edu: userEdu, exp: userExp };
+        let postData = {
+          headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
+          method: "PUT",
+          body: JSON.stringify(newUser) // JSON.stringify -> Will change the data from object/array to Json
+        }
+        fetch(url, postData)
+          .then(response => response.json())
+          .then(userInfo => {
+            alert(userName + " Updated Successfuly !");
+            getUser();
+            clearme();
+            userid = ""; //reset to default as empty
+          })
+      }
+    }
+
+    const clearme = () => {
+      document.getElementById("uname").value = "";
+      document.getElementById("uage").value = "";
+      document.getElementById("uedu").value = "";
+      document.getElementById("uexp").value = "";
+    }
+
+    const deluser = (id ) => {
+      let url = "http://localhost:3000/userapi/" + id;
+      alert(url);
+      let postData = { method: "delete" };
+      fetch(url, postData)
+        .then(response => response.json())
+        .then(emptyRes => {
+          getbook(); //reload the list after delete 
+        })
+    }
+
+    let userid = "";
+    const edituser = (id) => {
+      useredit = id;
+      let url = "http://localhost:3000/userapi/" + id;
+      fetch(url)
+      .then(response => response.json())
+      .then(userInfo => {
+        // console.log(userInfo);
+        document.getElementById("uname").value = userInfo.fullname;
+        document.getElementById("uage").value = userInfo.age;
+        document.getElementById("uedu").value = userInfo.edu;
+        document.getElementById("uexp").value = userInfo.exp;
+      })
     }
 
 
