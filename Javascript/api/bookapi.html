@@ -31,8 +31,8 @@
             data = data + "<td>" + book.name + "</td>";
             data = data + "<td>" + book.price + "</td>";
             data = data + "<td>" + book.qty + "</td>";
-            data = data + "<td><button onclick=editBook('" + book.id + "')> Edit </button</td>";
-            data = data + "<td><button onclick=delBook('" + book.id + "')> Delete </button</td>";
+            data = data + "<td><button onclick=editBook('" + book.id + "')> Edit </button></td>";
+            data = data + "<td><button onclick=delBook('" + book.id + "')> Delete </button></td>";
             data = data + "</tr>";
           })
           document.getElementById("container").innerHTML = data;
