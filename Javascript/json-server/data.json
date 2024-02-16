@@ -33,13 +33,6 @@
   ],
   "userapi": [
     {
-      "id": "1",
-      "fullname": "Alex",
-      "age": "24 Years",
-      "edu": "MCA",
-      "exp": "3 Years"
-    },
-    {
       "id": "4a06",
       "fullname": "Mohit",
       "age": "24",
