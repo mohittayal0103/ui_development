@@ -1,164 +1,166 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <style>
-    h1 {
-      color: orange;
-      text-align: center;
-    }
-
-    table {
-      border-collapse: collapse;
-    }
-
-    tr,
-    th,
-    td {
-      border: 0.5px solid skyblue;
-      padding: 10px 50px 10px;
-    }
-  </style>
-  <script>
-    const getbook = () => {
-      fetch("http://localhost:3000/bookapi")
-        .then(response => response.json())
-        .then(bookArray => {
-          let data = "";
-          bookArray.reverse().map((book, index) => {
-            data = data + "<tr>";
-            data = data + "<td>" + book.id + "</td>";
-            data = data + "<td>" + book.name + "</td>";
-            data = data + "<td>" + book.price + "</td>";
-            data = data + "<td>" + book.qty + "</td>";
-            data = data + "<td><button onclick=editBook('" + book.id + "')> Edit </button></td>";
-            data = data + "<td><button onclick=delBook('" + book.id + "')> Delete </button></td>";
-            data = data + "</tr>";
-          })
-          document.getElementById("container").innerHTML = data;
-        })
-    }
-
-    const save = () => {
-      let bookName = document.getElementById("bname").value;
-      let bookPrice = document.getElementById("bprice").value;
-      let bookQty = document.getElementById("bqty").value;
-
-      if (bookid == "") {
-        let url = "http://localhost:3000/bookapi"
-        // alert(bookName + bookPrice + bookQty);
-        let newBook = { name: bookName, price: bookPrice, qty: bookQty };
-        let postData = {
-          headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
-          method: "POST",
-          body: JSON.stringify(newBook) // JSON.stringify -> Will change the data from object/array to Json
-        }
-        fetch(url, postData)
-          .then(response => response.json())
-          .then(bookInfo => {
-            alert(bookName + " Save with Id: " + bookInfo.id);
-            getbook();
-            clearme();
-          })
+  <head>
+    <style>
+      h1 {
+        color: orange;
+        text-align: center;
       }
-      else {
-        // alert("update");
-        let url = "http://localhost:3000/bookapi/" + bookid;
-        let newBook = { name: bookName, price: bookPrice, qty: bookQty };
-        let postData = {
-          headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
-          method: "PUT",
-          body: JSON.stringify(newBook) // JSON.stringify -> Will change the data from object/array to Json
-        }
-        fetch(url, postData)
-          .then(response => response.json())
-          .then(bookInfo => {
-            alert(bookName + " Updated Successfuly !");
-            getbook();
-            clearme();
-            bookid = ""; //reset to default as empty
-          })
+
+      table {
+        border-collapse: collapse;
       }
-    }
 
-    const clearme = () => {
-      document.getElementById("bname").value = "";
-      document.getElementById("bprice").value = "";
-      document.getElementById("bqty").value = "";
-    }
+      tr,
+      th,
+      td {
+        border: 0.5px solid skyblue;
+        padding: 10px 50px 10px;
+      }
+    </style>
+    <script>
+      const getbook = () => {
+        fetch("http://localhost:3000/bookapi")
+          .then((response) => response.json())
+          .then((bookArray) => {
+            let data = "";
+            bookArray.reverse().map((book, index) => {
+              data = data + "<tr>";
+              data = data + "<td>" + book.id + "</td>";
+              data = data + "<td>" + book.name + "</td>";
+              data = data + "<td>" + book.price + "</td>";
+              data = data + "<td>" + book.qty + "</td>";
+              data =
+                data +
+                "<td><button onclick=editBook('" +
+                book.id +
+                "')> Edit </button></td>";
+              data =
+                data +
+                "<td><button onclick=delBook('" +
+                book.id +
+                "')> Delete </button></td>";
+              data = data + "</tr>";
+            });
+            document.getElementById("container").innerHTML = data;
+          });
+      };
 
-    const delBook = (id) => {
-      let url = "http://localhost:3000/bookapi/" + id;
-      // alert(url);
-      let postData = { method: "delete" };
-      fetch(url, postData)
-        .then(response => response.json())
-        .then(emptyRes => {
-          getbook(); //reload the list after delete 
-        })
-    }
+      const save = () => {
+        let bookName = document.getElementById("bname").value;
+        let bookPrice = document.getElementById("bprice").value;
+        let bookQty = document.getElementById("bqty").value;
 
-    let bookid = "";
-    const editBook = (id) => {
-      bookid = id;
-      let url = "http://localhost:3000/bookapi/" + id;
-      fetch(url)
-        .then(response => response.json())
-        .then(bookInfo => {
-          // console.log(bookInfo);
-          document.getElementById("bname").value = bookInfo.name;
-          document.getElementById("bprice").value = bookInfo.price;
-          document.getElementById("bqty").value = bookInfo.qty;
-        })
-    }
+        if (bookid == "") {
+          let url = "http://localhost:3000/bookapi";
+          // alert(bookName + bookPrice + bookQty);
+          let newBook = { name: bookName, price: bookPrice, qty: bookQty };
+          let postData = {
+            headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
+            method: "POST",
+            body: JSON.stringify(newBook), // JSON.stringify -> Will change the data from object/array to Json
+          };
+          fetch(url, postData)
+            .then((response) => response.json())
+            .then((bookInfo) => {
+              alert(bookName + " Save with Id: " + bookInfo.id);
+              getbook();
+              clearme();
+            });
+        } else {
+          // alert("update");
+          let url = "http://localhost:3000/bookapi/" + bookid;
+          let newBook = { name: bookName, price: bookPrice, qty: bookQty };
+          let postData = {
+            headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
+            method: "PUT",
+            body: JSON.stringify(newBook), // JSON.stringify -> Will change the data from object/array to Json
+          };
+          fetch(url, postData)
+            .then((response) => response.json())
+            .then((bookInfo) => {
+              alert(bookName + " Updated Successfuly !");
+              getbook();
+              clearme();
+              bookid = ""; //reset to default as empty
+            });
+        }
+      };
 
+      const clearme = () => {
+        document.getElementById("bname").value = "";
+        document.getElementById("bprice").value = "";
+        document.getElementById("bqty").value = "";
+      };
 
-  </script>
-</head>
+      const delBook = (id) => {
+        let url = "http://localhost:3000/bookapi/" + id;
+        // alert(url);
+        let postData = { method: "delete" };
+        fetch(url, postData)
+          .then((response) => response.json())
+          .then((emptyRes) => {
+            getbook(); //reload the list after delete
+          });
+      };
 
-<body onload="getbook()">
-  <h1 align="center"> List, Add, Delete, Update data in Json Server </h1>
-  <br /><br />
-  <table align="left" cellpadding="20" style="margin-left: 50px;">
-    <caption>
-      <h1> Enter Book Details </h1>
-    </caption>
-    <tr>
-      <th> Book Name: </th>
-      <td><input type="text" id="bname" size="35" /></td>
-    </tr>
-    <tr>
-      <th> Book Price: </th>
-      <td><input type="text" id="bprice" size="35" /></td>
-    </tr>
-    <tr>
-      <th> Book Qty.: </th>
-      <td><input type="text" id="bqty" size="35" /></td>
-    </tr>
-    <tr>
-      <th colspan="2">
-        <button onclick="save()"> Save Book </button>
-      </th>
-    </tr>
-  </table>
+      let bookid = "";
+      const editBook = (id) => {
+        bookid = id;
+        let url = "http://localhost:3000/bookapi/" + id;
+        fetch(url)
+          .then((response) => response.json())
+          .then((bookInfo) => {
+            // console.log(bookInfo);
+            document.getElementById("bname").value = bookInfo.name;
+            document.getElementById("bprice").value = bookInfo.price;
+            document.getElementById("bqty").value = bookInfo.qty;
+          });
+      };
+    </script>
+  </head>
 
-
-  <table align="right" cellpadding="15" border="1" style="margin-right: 50px;">
-    <caption>
-      <h1> Book List </h1>
-    </caption>
-    <thead>
+  <body onload="getbook()">
+    <h1 align="center">List, Add, Delete, Update data in Json Server</h1>
+    <br /><br />
+    <table align="center" cellpadding="20">
+      <caption>
+        <h1>Enter Book Details</h1>
+      </caption>
       <tr>
-        <th> Book Id </th>
-        <th> Book name </th>
-        <th> Book Price </th>
-        <th> Book Quantity</th>
-        <th> Update </th>
-        <th> Delete </th>
+        <th>Book Name:</th>
+        <td><input type="text" id="bname" size="35" /></td>
       </tr>
-    </thead>
-    <tbody id="container"></tbody>
-  </table>
-</body>
+      <tr>
+        <th>Book Price:</th>
+        <td><input type="text" id="bprice" size="35" /></td>
+      </tr>
+      <tr>
+        <th>Book Qty.:</th>
+        <td><input type="text" id="bqty" size="35" /></td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <button onclick="save()">Save Book</button>
+        </th>
+      </tr>
+    </table>
 
+    <table align="center" cellpadding="15" border="1">
+      <caption>
+        <h1>Book List</h1>
+      </caption>
+      <thead>
+        <tr>
+          <th>Book Id</th>
+          <th>Book name</th>
+          <th>Book Price</th>
+          <th>Book Quantity</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="container"></tbody>
+    </table>
+  </body>
 </html>
