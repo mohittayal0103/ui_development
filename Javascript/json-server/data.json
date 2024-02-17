@@ -42,9 +42,24 @@
   ],
   "cityapi": [
     {
-      "id": "1",
       "cityname": "Bangalore",
-      "user": "1000000"
+      "user": "100002",
+      "id": "1"
+    },
+    {
+      "id": "54e0",
+      "cityname": "Gurugram",
+      "user": "120000"
+    },
+    {
+      "id": "9011",
+      "cityname": "Noida",
+      "user": "120001"
+    },
+    {
+      "id": "80b8",
+      "cityname": "Mumbai",
+      "user": "120002"
     }
   ]
 }
