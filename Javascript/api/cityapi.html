@@ -1,17 +1,148 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      h1,
+      h2 {
+        color: orange;
+        text-align: center;
+      }
 
-<head>
-  <style>
+      table {
+        border-collapse: collapse;
+      }
 
-  </style>
-  <script>
+      tr,
+      th,
+      td {
+        border: 0.5px solid skyblue;
+        padding: 10px 50px 10px;
+      }
+    </style>
+    <script>
+      const getCity = () => {
+        fetch("http://localhost:3000/cityapi")
+          .then((response) => response.json())
+          .then((cityArray) => {
+            let data = "";
+            cityArray.map((city, index) => {
+              data = data + "<tr>";
+              data = data + "<td> " + city.id + " </td>";
+              data = data + "<td> " + city.cityname + " </td>";
+              data = data + "<td> " + city.user + " </td>";
+              data =
+                data +
+                "<td><button onclick=editCity('" +
+                city.id +
+                "')> Edit </button></td>";
+              data =
+                data +
+                "<td><button onclick=delCity('" +
+                city.id +
+                "')> Delete </button></td>";
+              data = data + "</tr>";
+            });
+            document.getElementById("container").innerHTML = data;
+          });
+      };
 
-  </script>
-</head>
+      const save = () => {
+        let cityName = document.getElementById("cname").value;
+        let cityUser = document.getElementById("cuser").value;
+        if (cityid == "") {
+          let url = "http://localhost:3000/cityapi";
+          let newCity = { cityname: cityName, user: cityUser };
+          let postData = {
+            headers: { "Content-Type": "application/json" },
+            method: "POST",
+            body: JSON.stringify(newCity),
+          };
+          fetch(url, postData)
+            .then((response) => response.json())
+            .then((cityInfo) => {
+              alert(cityName + "save with id: " + id);
+              getCity();
+            });
+        } else {
+          let url = "http://localhost:3000/cityapi/" + cityid;
+          let newCity = { cityname: cityName, user: cityUser };
+          let postData = {
+            headers: { "Content-Type": "application/json" },
+            method: "PUT",
+            body: JSON.stringify(newCity),
+          };
+          fetch(url, postData)
+            .then((response) => response.json())
+            .then((cityInfo) => {
+              alert(cityName + " Updated Successfuly!");
+              getCity();
+              cityid = "";
+            });
+        }
+      };
 
-<body>
-  <h1></h1>
-</body>
+      const delCity = (id) => {
+        let url = "http://localhost:3000/cityapi/" + id;
+        let postData = { method: "delete" };
+        fetch(url, postData)
+          .then((response) => response.json())
+          .then((emptyRes) => {
+            getCity();
+          });
+      };
 
+      let cityid = "";
+      const editCity = (id) => {
+        cityid = id;
+        let url = "http://localhost:3000/cityapi/" + id;
+        fetch(url)
+          .then((response) => response.json())
+          .then((cityInfo) => {
+            document.getElementById("cname").value = cityInfo.cityname;
+            document.getElementById("cuser").value = cityInfo.user;
+          });
+      };
+    </script>
+  </head>
+
+  <body onload="getCity()">
+    <h1>HomeWork 2</h1>
+    <br />
+    <table align="center" cellpadding="15">
+      <caption>
+        <h2>Enter City Details</h2>
+      </caption>
+      <tr>
+        <th>City Name:</th>
+        <td><input type="text" id="cname" size="25" /></td>
+      </tr>
+      <tr>
+        <th>User:</th>
+        <td><input type="text" id="cuser" size="25" /></td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <button onclick="save()">Save Details</button>
+        </th>
+      </tr>
+    </table>
+
+    <br />
+
+    <table align="center" cellpadding="15">
+      <caption>
+        <h2>City Details</h2>
+      </caption>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>City Name</th>
+          <th>User</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="container"></tbody>
+    </table>
+  </body>
 </html>
