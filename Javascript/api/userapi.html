@@ -1,177 +1,191 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <style>
-    h1,
-    h2 {
-      color: orange;
-      text-align: center;
-    }
-
-    table {
-      border-collapse: collapse;
-    }
-
-    tr,
-    th,
-    td {
-      border: 0.5px solid skyblue;
-      padding: 10px 50px 10px;
-    }
-
-    tr,
-    td {
-      text-align: left;
-    }
-  </style>
-  <script>
-    const getUser = () => {
-      fetch("http://localhost:3000/userapi")
-        .then(response => response.json())
-        .then(userArray => {
-          let data = "";
-          userArray.map((user, index) => {
-            data = data + "<tr>";
-            data = data + "<td>" + user.id + "</td>";
-            data = data + "<td>" + user.fullname + "</td>";
-            data = data + "<td>" + user.age + "</td>";
-            data = data + "<td>" + user.edu + "</td>";
-            data = data + "<td>" + user.exp + "</td>";
-            data = data + "<td> <button onclick=edituser('"+user.id+"')> Edit </button> </td>";
-            data = data + "<td> <button onclick=deluser('"+user.id+"')> Delete </button> </td>";
-            data = data + "</tr>";
-          })
-          document.getElementById("container").innerHTML = data;
-        })
-    }
-
-    const save = () => {
-      let userName = document.getElementById("uname").value;
-      let userAge = document.getElementById("uage").value;
-      let userEdu = document.getElementById("uedu").value;
-      let userExp = document.getElementById("uexp").value;
-
-      if(userid = ""){
-        let url = "http://localhost:3000/userapi";
-      // alert(userName + userAge + userEdu + userExp);
-      let newUser = { fullname: userName, age: userAge, edu: userEdu, exp: userExp };
-      let postData = {
-        headers: { "Content-Type": "application/json" },
-        method: "POST",
-        body: JSON.stringify(newUser)
+  <head>
+    <style>
+      h1,
+      h2 {
+        color: orange;
+        text-align: center;
       }
-      fetch(url, postData)
-        .then(response = response.json())
-        .then(userInfo => {
-          alert(userName + "save with id : " + userInfo.id);
-          getUser();
-        })
+
+      table {
+        border-collapse: collapse;
       }
-      else{
-        let url = "http://localhost:3000/userapi/" + userid;
-        let newUser = { fullname: userName, age: userAge, edu: userEdu, exp: userExp };
-        let postData = {
-          headers: { "Content-Type": "application/json" }, // application/json is a datatype like xml,html etc
-          method: "PUT",
-          body: JSON.stringify(newUser) // JSON.stringify -> Will change the data from object/array to Json
+
+      tr,
+      th,
+      td {
+        border: 0.5px solid skyblue;
+        padding: 10px 50px 10px;
+      }
+
+      tr,
+      td {
+        text-align: left;
+      }
+    </style>
+    <script>
+      const getUser = () => {
+        fetch("http://localhost:3000/userapi")
+          .then((response) => response.json())
+          .then((userArray) => {
+            let data = "";
+            userArray.map((user, index) => {
+              data = data + "<tr>";
+              data = data + "<td>" + user.id + "</td>";
+              data = data + "<td>" + user.fullname + "</td>";
+              data = data + "<td>" + user.age + "</td>";
+              data = data + "<td>" + user.edu + "</td>";
+              data = data + "<td>" + user.exp + "</td>";
+              data =
+                data +
+                "<td> <button onclick=edituser('" +
+                user.id +
+                "')> Edit </button> </td>";
+              data =
+                data +
+                "<td> <button onclick=deluser('" +
+                user.id +
+                "')> Delete </button> </td>";
+              data = data + "</tr>";
+            });
+            document.getElementById("container").innerHTML = data;
+          });
+      };
+
+      const save = () => {
+        let userName = document.getElementById("uname").value;
+        let userAge = document.getElementById("uage").value;
+        let userEdu = document.getElementById("uedu").value;
+        let userExp = document.getElementById("uexp").value;
+
+        if ((userid = "")) {
+          let url = "http://localhost:3000/userapi";
+          let newUser = {
+            fullname: userName,
+            age: userAge,
+            edu: userEdu,
+            exp: userExp,
+          };
+          let postData = {
+            headers: { "Content-Type": "application/json" },
+            method: "POST",
+            body: JSON.stringify(newUser),
+          };
+          fetch(url, postData)
+            .then((response = response.json()))
+            .then((userInfo) => {
+              alert(userName + "save with id : " + userInfo.id);
+              getUser();
+            });
+        } else {
+          let url = "http://localhost:3000/userapi/" + userid;
+          let newUser = {
+            fullname: userName,
+            age: userAge,
+            edu: userEdu,
+            exp: userExp,
+          };
+          let postData = {
+            headers: { "Content-Type": "application/json" },
+            method: "put",
+            body: JSON.stringify(newUser),
+          };
+          fetch(url, postData)
+            .then((response) => response.json())
+            .then((userInfo) => {
+              alert(userName + " Updated Successfuly !");
+              getUser();
+              clearme();
+              userid = ""; //reset to default as empty
+            });
         }
+      };
+
+      const clearme = () => {
+        document.getElementById("uname").value = "";
+        document.getElementById("uage").value = "";
+        document.getElementById("uedu").value = "";
+        document.getElementById("uexp").value = "";
+      };
+
+      const deluser = (id) => {
+        let url = "http://localhost:3000/userapi/" + id;
+        alert(url);
+        let postData = { method: "delete" };
         fetch(url, postData)
-          .then(response => response.json())
-          .then(userInfo => {
-            alert(userName + " Updated Successfuly !");
-            getUser();
-            clearme();
-            userid = ""; //reset to default as empty
-          })
-      }
-    }
+          .then((response) => response.json())
+          .then((emptyRes) => {
+            getbook(); //reload the list after delete
+          });
+      };
 
-    const clearme = () => {
-      document.getElementById("uname").value = "";
-      document.getElementById("uage").value = "";
-      document.getElementById("uedu").value = "";
-      document.getElementById("uexp").value = "";
-    }
+      let userid = "";
+      const edituser = (id) => {
+        userid = id;
+        let url = "http://localhost:3000/userapi/" + id;
+        fetch(url)
+          .then((response) => response.json())
+          .then((userInfo) => {
+            // console.log(userInfo);
+            document.getElementById("uname").value = userInfo.fullname;
+            document.getElementById("uage").value = userInfo.age;
+            document.getElementById("uedu").value = userInfo.edu;
+            document.getElementById("uexp").value = userInfo.exp;
+          });
+      };
+    </script>
+  </head>
 
-    const deluser = (id ) => {
-      let url = "http://localhost:3000/userapi/" + id;
-      alert(url);
-      let postData = { method: "delete" };
-      fetch(url, postData)
-        .then(response => response.json())
-        .then(emptyRes => {
-          getbook(); //reload the list after delete 
-        })
-    }
+  <body align="center" onload="getUser()">
+    <h1>HomeWork 1</h1>
 
-    let userid = "";
-    const edituser = (id) => {
-      useredit = id;
-      let url = "http://localhost:3000/userapi/" + id;
-      fetch(url)
-      .then(response => response.json())
-      .then(userInfo => {
-        // console.log(userInfo);
-        document.getElementById("uname").value = userInfo.fullname;
-        document.getElementById("uage").value = userInfo.age;
-        document.getElementById("uedu").value = userInfo.edu;
-        document.getElementById("uexp").value = userInfo.exp;
-      })
-    }
-
-
-  </script>
-</head>
-
-<body align="center" onload="getUser()">
-  <h1> HomeWork 1 </h1>
-
-
-  <table align="Center" cellpadding="15">
-    <caption>
-      <h2> Add or Update User Details </h2>
-    </caption>
-    <tr>
-      <th> Full Name </th>
-      <td> <input type="text" id="uname" /> </td>
-    </tr>
-    <tr>
-      <th> Age </th>
-      <td> <input type="text" id="uage" /> Years </td>
-    </tr>
-    <tr>
-      <th> Education </th>
-      <td> <input type="text" id="uedu" /></td>
-    </tr>
-    <tr>
-      <th> Experiance </th>
-      <td> <input type="text" id="uexp" /> Years </td>
-    </tr>
-    <tr>
-      <th colspan="2" align="center"> <button onclick="save()"> Save </button> </th>
-    </tr>
-  </table>
-
-  <br /> <br />
-
-  <table align="Center" cellpadding="15">
-    <caption>
-      <h2> User List </h2>
-    </caption>
-    <thead>
+    <table align="Center" cellpadding="15">
+      <caption>
+        <h2>Add or Update User Details</h2>
+      </caption>
       <tr>
-        <th> User Id </th>
-        <th> Full Name </th>
-        <th> Age </th>
-        <th> Education </th>
-        <th> Experience </th>
-        <th> Update </th>
-        <th> Delete </th>
+        <th>Full Name</th>
+        <td><input type="text" id="uname" /></td>
       </tr>
-    </thead>
-    <tbody id="container"></tbody>
-  </table>
-</body>
+      <tr>
+        <th>Age</th>
+        <td><input type="text" id="uage" /> Years</td>
+      </tr>
+      <tr>
+        <th>Education</th>
+        <td><input type="text" id="uedu" /></td>
+      </tr>
+      <tr>
+        <th>Experiance</th>
+        <td><input type="text" id="uexp" /> Years</td>
+      </tr>
+      <tr>
+        <th colspan="2" align="center">
+          <button onclick="save()">Save</button>
+        </th>
+      </tr>
+    </table>
 
+    <br />
+    <br />
+
+    <table align="Center" cellpadding="15">
+      <caption>
+        <h2>User List</h2>
+      </caption>
+      <thead>
+        <tr>
+          <th>User Id</th>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>Education</th>
+          <th>Experience</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="container"></tbody>
+    </table>
+  </body>
 </html>
