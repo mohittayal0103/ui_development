@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      i {
+        color: red;
+      }
+
+      table {
+        padding: 30px;
+        margin: auto;
+        box-shadow: 0px 0px 1px grey;
+      }
+
+      tr {
+        height: 40px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    </style>
+    <script>
+      const validateme = () => {
+        // alert("working");
+        //Full Name Validation
+        let formstatus = true;
+        let fname = document.getElementById("fname");
+
+        if (fname.value == "") {
+          formstatus = false;
+          fname.style.borderColor = "red";
+          document.getElementById("nameerror").innerText = "valid name !";
+        } else {
+          fname.style.borderColor = "";
+          document.getElementById("nameerror").innerText = "";
+        }
+
+        //mobile no valid
+        let mobile = document.getElementById("mobile");
+        let mpattern = /^[0]?[6789]\d{9}$/;
+        if (!mpattern.test(mobile.value)) {
+          formstatus = false;
+          mobile.style.borderColor = "red";
+          document.getElementById("mobileerror").innerText =
+            "invalid mobile number";
+        } else {
+          Number.style.borderColor = "";
+          document.getElementById("mobileerror").innerText = "";
+        }
+
+        // gender validation
+        let male = document.getElementById("male").checked;
+        let female = document.getElementById("female").checked;
+        if (male == false && female == false) {
+          fromstatus = false;
+          document.getElementById("gendererror").innerText = "invalid gender";
+        } else {
+          document.getElementById("gendererror").innerText = "";
+        }
+
+        // email validation
+        let email = document.getElementById("email");
+        var epatern =
+          /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!epatern.test(email.value)) {
+          email.style.borderColor = "red";
+          formstatus = false;
+          document.getElementById("emailerror").innerText = "invalid email id";
+        } else {
+          email.style.borderColor = "";
+          document.getElementById("emailerror").innerText = "";
+        }
+
+        //password validation
+        let password = document.getElementById("password");
+        if (password.value.length < 7 || password.value.length > 8) {
+          password.style.borderColor = "red";
+          formstatus = false;
+          document.getElementById("passworderror").innerText =
+            "invalid password";
+        } else {
+          password.style.borderColor = "";
+          document.getElementById("passworderror").innerText = "";
+        }
+
+        //dob validation
+        let dob = document.getElementById("dob");
+        if (dob.value == "") {
+          dob.style.borderColor = "red";
+          formstatus = false;
+          document.getElementById("doberror").innerText =
+            "invalid date of birth";
+        } else {
+          dob.style.borderColor = "";
+          document.getElementById("doberror").innerText = "";
+        }
+
+        return formstatus;
+      };
+    </script>
+  </head>
+
+  <body>
+    <form action="save.php" method="post" onsubmit="return validateme()">
+      <table>
+        <caption>
+          <h1>Create Account</h1>
+          <i> The * Marked fields are mandatory </i>
+        </caption>
+        <tr>
+          <th>Full Name <i>*</i></th>
+          <td>
+            <input type="text" class="smallinput" id="fname" /><i
+              id="nameerror"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <th>Mobile No. <i>*</i></th>
+          <td>
+            <input type="number" class="smallinput" id="mobile" /><i
+              id="mobileerror"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <th>Gender <i>*</i></th>
+          <td>
+            <input type="radio" id="male" name="gender" /> Male
+            <input type="radio" id="female" name="gender" /> Female
+            <i id="gendererror"></i>
+          </td>
+        </tr>
+        <tr>
+          <th>Email Id <i>*</i></th>
+          <td>
+            <input type="email" class="smallinput" id="email" /><i
+              id="emailerror"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <th>Password <i>*</i></th>
+          <td>
+            <input type="password" class="smallinput" id="password" /><i
+              id="passworderror"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <th>Date of Birth <i>*</i></th>
+          <td>
+            <input type="date" class="smallinput" id="dob" /><i
+              id="doberror"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <button>Register</button>
+          </th>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

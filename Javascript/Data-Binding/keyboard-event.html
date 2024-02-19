@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+
+    const one = (xyz) => {
+      console.log(xyz);
+      //alert("It is Working... !");
+    }
+
+  </script>
+</head>
+
+<body align="center" onload="one('Welcome To Home')">
+
+  <h1> Keyboard Event Example </h1>
+
+  <p> onkeypress: <input type="text" value="Apple" onkeypress="one( this.value )" /></p>
+  <p> onkeydown: <input type="text" value="Mango" onkeydown="one( this.value )" /></p>
+  <p> onkeyup: <input type="text" value="Banana" onkeyup="one( this.value )" /></p>
+  <p> onfocus: <input type="text" value="Orange" onfocus="one( this.value )" /></p>
+  <p> onblur: <input type="text" value="Mango" onblur="one( this.value )" /></p>
+
+</body>
+
+</html>

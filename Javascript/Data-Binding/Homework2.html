@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #container {
+      width: 90%;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+
+    let city = ['Delhi', 'Mumbai', 'Chennai', 'Bangalore', 'Hisar']
+
+    const one = (keyword = "") => {
+      let temp = "";
+      city.map((cityname, index) => {
+        temp = temp + "<p>" + index + "<br/>" + cityname + "<br/>" + cityname.length;
+        document.getElementById("container").innerHTML = temp;
+      })
+    }
+
+    const save = () => {
+      let cityname = document.getElementById("cname").value;
+      city.push(cityname);
+      one();
+      document.getElementById("cname").value = "";
+    }
+  </script>
+</head>
+
+<body align="center" onload="one()">
+
+  <h1> Homework 2 </h1>
+
+  <p>
+    Save Object : <input type="text" placeholder="Enter Object" id="cname" />
+    <button onclick="save()"> Save </button>
+  </p>
+
+  <br />
+
+  <section id="container"></section>
+</body>
+
+</html>

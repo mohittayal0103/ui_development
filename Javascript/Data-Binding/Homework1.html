@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #container {
+      width: 90%;
+      display: grid;
+      grid-template-columns: auto;
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+
+    let obj = ['Apple', 'Mango', 'Bangalore', 'Delhi'];
+
+    const one = (Keywprd = "") => {
+      let temp = "";
+      obj.map((objname, index) => {
+        if (objname.toLowerCase().match(Keywprd.toLowerCase())) {
+          temp = temp + "<p>" + objname + "-" + objname.length;
+        }
+        document.getElementById("container").innerHTML = temp;
+      })
+    }
+
+    const save = () => {
+      let objname = document.getElementById("oname").value;
+      obj.push(objname);
+      one();
+      document.getElementById("oname").value = "";
+    }
+  </script>
+</head>
+
+<body align="center" onload="one()">
+
+  <h1> Homework 1 </h1>
+
+  <p> Search Object : <input type="text" placeholder="Search..." onkeyup="one(this.value)" />
+    Save Object : <input type="text" placeholder="Enter Object" id="oname" /> <button onclick="save()"> Save </button>
+  </p>
+
+  <br />
+
+  <section id="container"></section>
+</body>
+
+</html>

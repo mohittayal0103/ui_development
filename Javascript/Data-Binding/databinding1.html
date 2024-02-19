@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    let message = "<h2> Welcome to JavaScript </h2> it is working well..."
+
+    const one = () => {
+      document.write(message);  //Document refers current page HTML start to HTML end
+    }
+
+    const two = () => {
+      document.getElementById("xyz").innerText = message; //getElementById is a function to get directly to given ID
+    }
+
+    const three = () => {
+      document.getElementById("abc").innerHTML = message;
+    }
+  </script>
+</head>
+
+<body align="center">
+  <h1>.innerText and .innerHTML in JavaScript</h1>
+
+  <button onclick="one()"> document.write </button>
+  <button onclick="two()"> innerText </button>
+  <button onclick="three()"> innerHTML </button>
+
+  <br /><br /><br />
+
+  <div id="xyz"> </div>
+
+  <br /><br /><br />
+
+  <div id="abc"> </div>
+</body>
+
+</html>

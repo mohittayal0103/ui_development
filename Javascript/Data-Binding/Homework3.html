@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+
+    .pdiv {
+      display: grid;
+      grid-template-columns: 30% 70%;
+    }
+
+    .form {
+      width: 100%;
+      margin: 5%;
+    }
+
+    .table {
+      width: 100%;
+      margin: 2%;
+    }
+
+    .form1 {
+      border: 2px solid rgb(197, 196, 196);
+      border-radius: 2px;
+      width: auto;
+      height: 600px;
+      text-align: left;
+      margin: 0px;
+    }
+
+    .table1{
+      border: 2px solid rgb(197, 196, 196);
+      border-radius: 2px;
+      width: auto;
+      text-align: left;
+      margin: 0px;
+    }
+
+    table th,
+    td {
+      padding: 10px;
+      font-size: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+
+    table thead {
+      background-color: rgb(202, 196, 196, 0.3);
+    }
+
+    table thead td {
+      color: brown;
+    }
+
+    input {
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 2px solid rgb(197, 196, 196);
+      width: 250px;
+      height: 30px;
+    }
+
+    select {
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 2px solid rgb(197, 196, 196);
+      width: 250px;
+      height: 30px;
+    }
+
+    th button {
+      border: 2px solid rgb(196, 196, 197);
+      background-color: rgb(92, 92, 248);
+      color: antiquewhite;
+      width: 280px;
+      height: 40px;
+      border-radius: 6px;
+    }
+
+    td button {
+      background-color: rgb(92, 92, 248);
+      color: antiquewhite;
+      border-radius: 2px;
+    }
+  </style>
+
+  <script>
+    let vehlist = [
+      {id: 1, num: "Vehicle1", typ: "Large", troot: "Ben-Man", drv: "Mrinal Garg", mob: 9999999999},
+    ];
+
+    const getveh = () => {
+      data = "";
+      vehlist.map((vehicle, index) => {
+          data = data + "<tr>";
+          data=data+"<td>"+vehicle.id+"</td>";
+          data=data+"<td>"+vehicle.num+"</td>";
+          data=data+"<td>"+vehicle.typ+"</td>";
+          data=data+"<td>"+vehicle.troot+"</td>";
+          data=data+"<td>"+vehicle.drv+"</td>";
+          data=data+"<td>"+vehicle.mob+"</td>";
+          data=data+"<td><button onclick=editveh(" + index + ")> Edit </button</td>";
+          data=data+"<td><button onclick=delveh(" + index + ")> Delete </button></td>";
+          data = data + "</tr>";
+      })
+      document.getElementById("container").innerHTML = data;
+    }
+
+      const save = () => {
+        let tid = document.getElementById("tid").value;
+        let tnum = document.getElementById("tnum").value;
+        let rname = document.getElementById("rname").value;
+        let size = document.getElementById("size").value;
+        let dname = document.getElementById("dname").value;
+        let dnum = document.getElementById("dnum").value;
+        let newveh = {id: tid, num: tnum, typ: size, troot: rname, drv: dname, mob: dnum};
+        // vehlist = vehlist.concat(newveh);
+        if(vehindex>-1){
+          vehlist[vehindex] = newveh;
+        }
+        else{
+          vehlist.splice(0, 0, newveh);
+        }
+        getveh();
+
+        document.getElementById("tid").value = "";
+        document.getElementById("tnum").value = "";
+        document.getElementById("rname").value = "";
+        document.getElementById("size").value = "";
+        document.getElementById("dname").value = "";
+        document.getElementById("dnum").value = "";
+      }
+
+      const delveh = (index) => {
+        vehlist.splice(index,1);
+        getveh();
+      }
+
+      let vehindex = "";
+      
+      const editveh = (index) => {
+        let vehinfo = vehlist[index];
+        vehindex = index;
+        document.getElementById("tid").value = vehinfo.id;
+        document.getElementById("tnum").value = vehinfo.num;
+        document.getElementById("rname").value = vehinfo.troot;
+        document.getElementById("size").value = vehinfo.size;
+        document.getElementById("dname").value = vehinfo.drv;
+        document.getElementById("dnum").value = vehinfo.mob;
+      }
+
+  </script>
+</head>
+
+<body onload="getveh()">
+  <h1 align="center"> Home Work - 3</h1>
+  <hr size="3" color="orangered" />
+  <br />
+  <br />
+  <div class="pdiv">
+    <div class="form">
+      <form>
+        <table class="form1">
+          <thead>
+            <tr>
+              <td> New Transport </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Transport Id <br /> <input type="number" id="tid" /></td>
+            </tr>
+            <tr>
+              <td> Transport Number <br /> <input type="text" id="tnum" /></td>
+            </tr>
+            <tr>
+              <td> Root Name <br /> <input type="text" id="rname" /></td>
+            </tr>
+            <tr>
+              <td> Size <br />
+                <select id="size">
+                  <option></option>
+                  <option> Small </option>
+                  <option> Medium </option>
+                  <option> Large </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td> Driver Name <br /> <input type="text" id="dname" /></td>
+            </tr>
+            <tr>
+              <td> Driver Mobile Number <br /> <input type="number" id="dnum" /></td>
+            </tr>
+            <tr>
+              <th> <button onclick="save()"> Save </button> </th>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <div class="table">
+      <table class="table1">
+        <thead>
+          <tr>
+            <td> T-Id </td>
+            <td> T-Number </td>
+            <td> Type </td>
+            <td> Transport Root </td>
+            <td> Driver </td>
+            <td> Mobile Number </td>
+            <td> Update </td>
+            <td> Delete </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="container"></tr>
+        </tbody>
+      </table>
+    </div>
+  </diV>
+</body>
+
+</html>

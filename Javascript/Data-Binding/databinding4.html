@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    img:hover {
+      box-shadow: 0px 0px 20px red;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    const one = (photourl) => {
+      // alert(photourl);
+      document.getElementById("mypic").src = photourl;
+    }
+  </script>
+</head>
+
+<body>
+  <center>
+    <h1> Javascript With Image </h1>
+    <img src="1.jpg" height="400" width="600" id="mypic" />
+    <br /> <br />
+    <img src="2.jpg" height="80" width="120" id="mypic" onmouseenter="one(this.src)" />
+    <img src="3.jpg" height="80" width="120" id="mypic" onmouseenter="one(this.src)" />
+    <img src="4.jpg" height="80" width="120" id="mypic" onmouseenter="one(this.src)" />
+    <img src="1.jpg" height="80" width="120" id="mypic" onmouseenter="one(this.src)" />
+  </center>
+</body>
+
+</html>

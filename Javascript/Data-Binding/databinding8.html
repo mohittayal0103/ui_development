@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    let booklist = [
+      { name: "Book1", price: "Price1", author: "Author1" },
+      { name: "Book2", price: "Price2", author: "Author2" },
+      { name: "Book3", price: "Price3", author: "Author3" },
+      { name: "Book4", price: "Price4", author: "Author4" },
+    ];
+
+    const getbook = (keyword = "") => {
+      let temp = "";
+      let k = keyword.toLowerCase();
+      booklist.map((book, index) => {
+        if (book.name.toLowerCase().match(k) || book.price.toLowerCase().match(k) || book.author.toLowerCase().match(k)) {
+          temp = temp + "<tr>";
+          temp = temp + "<td>" + book.name + "</td>";
+          temp = temp + "<td>" + book.price + "</td>";
+          temp = temp + "<td>" + book.author + "</td>";
+          temp = temp + "<td> <button onclick=editbook(" + index + ")> Edit </button> </td>"
+          temp = temp + "<td> <button onclick=delbook(" + index + ")> Delete </button> </td>";
+          temp = temp + "<tr>";
+        }
+      })
+      document.getElementById("container1").innerHTML = temp;
+    }
+
+    const save = () => {
+      let bookname = document.getElementById("bname").value;
+      let bookprice = document.getElementById("bprice").value;
+      let bookauthor = document.getElementById("bauthor").value;
+      let newbook = { name: bookname, price: bookprice, author: bookauthor };
+      // booklist = booklist.concat(newbook); // Add New Object at end of Array of Object
+      if (bookindex > -1) {
+        booklist[bookindex] = newbook; // update value of particular index
+      }
+      else {
+        booklist.splice(0, 0, newbook); // add new element begining of array of object
+      }
+      getbook();  //Reload the list after save      
+      //clear text box
+      document.getElementById("bname").value = "";
+      document.getElementById("bprice").value = "";
+      document.getElementById("bauthor").value = "";
+    }
+
+    const delbook = (index) => {
+      booklist.splice(index, 1);
+      getbook();
+    }
+
+    let bookindex = -1;
+    const editbook = (index) => {
+      let bookinfo = booklist[index];
+      bookindex = index;
+      document.getElementById("bname").value = bookinfo.name;
+      document.getElementById("bprice").value = bookinfo.price;
+      document.getElementById("bauthor").value = bookinfo.author;
+    }
+  </script>
+</head>
+
+<body align="center" onload="getbook()">
+  <h1> Array of Object Add, List, Delete, Search, Update </h1>
+  <br /><br />
+  <p align="center">
+    <input type="text" placeholder="Book Name" id="bname" />
+    <input type="text" placeholder="Book Price" id="bprice" />
+    <input type="text" placeholder="Book Author" id="bauthor" />
+    <button onclick="save()"> Save </button>
+  </p>
+  <br /><br />
+  <p> Search: <input type="text" placeholder="Search..." onkeyup="getbook(this.value)" /> </p>
+  <br /> <br />
+  <table align="center" cellpadding="10" border="1" cellspacing="0">
+    <thead>
+      <tr>
+        <th> Book Name </th>
+        <th> Book Price </th>
+        <th> Book Author </th>
+        <th> Edit </th>
+        <th> Delete </th>
+      </tr>
+    </thead>
+    <tbody id="container1"></tbody>
+  </table>
+</body>
+
+</html>
