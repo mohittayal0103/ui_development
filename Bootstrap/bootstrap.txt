@@ -1,0 +1,112 @@
+-->BOOTSTRAP is a library of css it was intoduced by twitter in 2011 
+-->it is the first framework of html css javascript
+
+
+library-means 1 language
+framework- meansmore than 1 language
+----> bootstrap is used to responsive webpage desgining.
+the bootstrap divide all type of devices in 6 categories based on screen width
+   1. extra small devices - 1px to 576px window width
+   2. small devices - 576px to 768px window width 
+   3.medium devices -768px to 992px window width
+   4.large devices -992px to 1200px window width
+   5.extra large devices -1200px to 1400px window width
+   6. double extra large devices - >1401pxwindow width
+ -----------------------------------------------------------------------------------------------------------------------------------
+  the bootstrap has given 12 classes for each category.
+  1.extra small devices
+      .col-1
+      .col-2
+      .col-3
+      .col-4
+      .col-5
+      .col-6
+      .col-7
+      .col-8
+      .col-9
+      .col-10
+      .col-11
+      .col-12
+  2. small devices
+      .col-sm-1
+      .col-sm-2
+      .col-sm-3
+      .col-sm-4
+      .col-sm-5
+      .col-sm-6
+      .col-sm-7
+      .col-sm-8
+      .col-sm-9
+      .col-sm-10
+      .col-sm-11
+      .col-sm-12
+
+3.  medium devices
+     .col-md-1
+      .col-md-2
+      .col-md-3
+      .col-md-4
+      .col-md-5
+      .col-md-6
+      .col-md-7
+      .col-md-8
+      .col-md-9
+      .col-md-10
+      .col-md-11
+      .col-md-12
+
+
+  4.large device
+     .col-lg-1
+      .col-lg-2
+      .col-lg-3
+      .col-lg-4
+      .col-lg-5
+      .col-lg-6
+      .col-lg-7
+      .col-lg-8
+      .col-lg-9
+      .col-lg-10
+      .col-lg-11
+      .col-lg-12
+
+    5. extra large devices
+      .col-xl-1
+      .col-xl-2
+      .col-xl-3
+      .col-xl-4
+      .col-xl-5
+      .col-xl-6
+      .col-xl-7
+      .col-xl-8
+      .col-xl-9
+      .col-xl-10
+      .col-xl-11
+      .col-xl-12
+
+    5.double extra large devices
+      .col-xxl-1
+      .col-xxl-2
+      .col-xxl-3
+      .col-xxl-4
+      .col-xxl-5
+      .col-xxl-6
+      .col-xxl-7
+      .col-xxl-8
+      .col-xxl-9
+      .col-xxl-10
+      .col-xxl-11
+      .col-xxl-12
+*********************72*******************************************
+   TO CREATE A WEBPAGE USING BOOTSTRAP FOLLOW THESE STEPS
+    1. LINK TO BOOTSTRRAP FILE IN HEAD SECTION.
+    2.USE BODY TAG .
+    3.INSIDE BODY OF HTML FOLLOW THESE classes:- 
+         .container -> it has margin from left and right
+         .container-fluid -> it cover full width
+    4. INSIDE .CONTAINER OR CONTAINER-FLUID, FOLLOW THE classes
+      .row - height is auto, width is 100% of parent
+    5.INSIDE THE ROW FOLLOW THE COLUMNS-
+      ->each row can hold min 1 column and max 12 COLUMNS.
+    
+----------------------------------------------------------------------------------------------------------------
