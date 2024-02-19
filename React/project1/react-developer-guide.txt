@@ -1,0 +1,21 @@
+
+About XML Rules:
+    1. Every XML document should have doctype decalaration.
+    2. XML tags are userdefined.
+    3. XML tags are case sensitive.
+    4. Every xml document should have only 1 parent element.
+
+Example:
+    <? xml version="1.0" ?>
+        <productList>
+            <product>
+                <name> Apple </num>
+                <price> 300 </price>
+                <qty> 10 </qty>
+            </product>
+            <product>
+                <name> Mango </num>
+                <price> 200 </price>
+                <qty> 15 </qty>
+            </product>
+        </ProductList>
