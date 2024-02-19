@@ -12,9 +12,11 @@ the bootstrap divide all type of devices in 6 categories based on screen width
    4.large devices -992px to 1200px window width
    5.extra large devices -1200px to 1400px window width
    6. double extra large devices - >1401pxwindow width
- -----------------------------------------------------------------------------------------------------------------------------------
-  the bootstrap has given 12 classes for each category.
-  1.extra small devices
+
+ -----------------------------------------------------------------------------------------
+  
+  The bootstrap has given 12 classes for each category.
+  1. extra small devices
       .col-1
       .col-2
       .col-3
@@ -41,8 +43,8 @@ the bootstrap divide all type of devices in 6 categories based on screen width
       .col-sm-11
       .col-sm-12
 
-3.  medium devices
-     .col-md-1
+  3. medium devices
+      .col-md-1
       .col-md-2
       .col-md-3
       .col-md-4
@@ -56,8 +58,8 @@ the bootstrap divide all type of devices in 6 categories based on screen width
       .col-md-12
 
 
-  4.large device
-     .col-lg-1
+  4. large device
+      .col-lg-1
       .col-lg-2
       .col-lg-3
       .col-lg-4
@@ -70,7 +72,7 @@ the bootstrap divide all type of devices in 6 categories based on screen width
       .col-lg-11
       .col-lg-12
 
-    5. extra large devices
+  5. extra large devices
       .col-xl-1
       .col-xl-2
       .col-xl-3
@@ -84,7 +86,7 @@ the bootstrap divide all type of devices in 6 categories based on screen width
       .col-xl-11
       .col-xl-12
 
-    5.double extra large devices
+  6.double extra large devices
       .col-xxl-1
       .col-xxl-2
       .col-xxl-3
@@ -97,16 +99,87 @@ the bootstrap divide all type of devices in 6 categories based on screen width
       .col-xxl-10
       .col-xxl-11
       .col-xxl-12
-*********************72*******************************************
+
+*****Total 72 Classes*****
+
+----------------------------------------------------------------------------------------
+
    TO CREATE A WEBPAGE USING BOOTSTRAP FOLLOW THESE STEPS
     1. LINK TO BOOTSTRRAP FILE IN HEAD SECTION.
-    2.USE BODY TAG .
-    3.INSIDE BODY OF HTML FOLLOW THESE classes:- 
+    2. USE BODY TAG .
+    3. INSIDE BODY OF HTML FOLLOW THESE classes:- 
          .container -> it has margin from left and right
          .container-fluid -> it cover full width
     4. INSIDE .CONTAINER OR CONTAINER-FLUID, FOLLOW THE classes
-      .row - height is auto, width is 100% of parent
-    5.INSIDE THE ROW FOLLOW THE COLUMNS-
-      ->each row can hold min 1 column and max 12 COLUMNS.
+       .row - height is auto, width is 100% of parent
+    5. INSIDE THE ROW FOLLOW THE COLUMNS-
+       ->each row can hold min 1 column and max 12 COLUMNS.
     
-----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+  html -> head(link to Bootstrap.css)
+       -> body->container->row->columns(72)->print the data
+
+
+-------------------------------------------------------------------------------------------
+
+Classes for margin ad padding (utility classes)
+    m - margin
+    p - padding
+    t - top
+    b - bottom
+    s - start (left)
+    e - end (right)
+
+    1 - 4px
+    2 - 8px
+    3 - 16px
+    4 - 24px
+    5 - 48px
+
+  Margin:
+    .m-1,.m-2,.m-3,.m-4,.m-5      -> Equal outer space from all the sides.
+    .mt-1,.mt-2,.mt-3,.mt-4,.mt-5 -> Outer Space from top.
+    .mb-1,.mb-2,.mb-3,.mb-4,.mb-5 -> Outer Space from bottom.
+    .ms-1,.ms-2,.ms-3,.ms-4,.ms-5 -> Outer Space from left.
+    .me-1,.me-2,.me-3,.me-4,.me-5 -> Outer Space from right.
+
+  Padding:
+    .p-1,.p-2,.p-3,.p-4,.p-5      -> Equal inner space from all the sides.
+    .pt-1,.pt-2,.pt-3,.pt-4,.pt-5 -> Inner Space from top.
+    .pb-1,.pb-2,.pb-3,.pb-4,.pb-5 -> Inner Space from bottom.
+    .ps-1,.ps-2,.ps-3,.ps-4,.ps-5 -> Inner Space from left.
+    .pe-1,.pe-2,.pe-3,.pe-4,.pe-5 -> Inner Space from right.
+
+-------------------------------------------------------------------------------------------
+
+Classes for text color 
+    .text-danger         red
+    .text-success        green
+    .text-primary        blue
+    .text-info           skyblue
+    .text-warning        yellow
+    .text-secondary      grey
+    .text-white          white
+    .text-dark           black
+
+-------------------------------------------------------------------------------------------
+
+Classes for background color 
+    .bg-danger         red
+    .bg-success        green
+    .bg-primary        blue
+    .bg-info           skyblue
+    .bg-warning        yellow
+    .bg-secondary      grey
+    .bg-white          white
+    .bg-dark           black
+
+-------------------------------------------------------------------------------------------
+
+Calsses for text allignment
+    .text-start    Left allignment
+    .text-end      Right allignment
+    .text-center   Center allignment
+
+--------------------------------------------------------------------------------------------
