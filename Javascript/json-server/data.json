@@ -38,6 +38,13 @@
       "age": "24",
       "edu": "Btech",
       "exp": "3"
+    },
+    {
+      "id": "6aad",
+      "fullname": "mihir",
+      "age": "45",
+      "edu": "fg",
+      "exp": "56"
     }
   ],
   "cityapi": [
