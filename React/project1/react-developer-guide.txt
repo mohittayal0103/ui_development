@@ -1,3 +1,5 @@
+!!!!----TOTAL - 20 CLASSES----!!!!
+
 
 About XML Rules:
     1. Every XML document should have doctype decalaration.
@@ -7,15 +9,70 @@ About XML Rules:
 
 Example:
     <? xml version="1.0" ?>
-        <productList>
-            <product>
-                <name> Apple </num>
-                <price> 300 </price>
-                <qty> 10 </qty>
-            </product>
-            <product>
-                <name> Mango </num>
-                <price> 200 </price>
-                <qty> 15 </qty>
-            </product>
-        </ProductList>
+    <productList>
+        <product>
+            <name> Apple </name>
+            <price> 300 </price>
+            <qty> 10 </qty>
+        </product>
+        <product>
+            <name> Mango </name>
+            <price> 200 </price>
+            <qty> 15 </qty>
+        </product>
+    </productList>
+
+--------------------------------------------------------------------------------------------------------------
+
+Component?
+
+    -> The component in react is just like a function in javascript.
+    -> React component return HTML written JSX.
+    -> The components are of 2 types in React
+        1. Class based component - Class Component
+        2. Function based component - Functional Component
+
+    JSX = JavaScript + HTML + XML Rules
+
+    JSX Element = All the user-defined tags and pre-defined tags are called JSX Element in React.
+
+    JSX Rules:
+        1. If inside a component more than 1 elements are required then keep under the parent JSX Element.
+            Example:
+                        <section>
+                        <h1> About Us </h1>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>                        
+                        </section>
+        
+        2. The parent or child jsx element canbe user-defined tag also.
+            Example:
+                        <xyz>
+                        <h1> About Us </h1>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>
+                        <m> dfg dfg dfg dfg dfg dfg dfg dfg dfg </m>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>                        
+                        </xyz>
+
+        3. The parent or child jsx element can be empty tag also. #you cannot apply style on empty tags
+            Example:
+                        <>
+                        <> About Us </>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>
+                        <> dfg dfg dfg dfg dfg dfg dfg dfg dfg </>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>                        
+                        </>
+
+        4. The parent jsx element can be array also. #After every element comma "," is required.
+            Example:
+                        [
+                        <> About Us </>
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>,
+                        <> dfg dfg dfg dfg dfg dfg dfg dfg dfg </>,
+                        <p> dfg dfg dfg dfg dfg dfg dfg dfg dfg </p>                        
+                        ]
+            
+--------------------------------------------------------------------------------------------------------------
+
+
