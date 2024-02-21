@@ -183,3 +183,36 @@ Calsses for text allignment
     .text-center   Center allignment
 
 --------------------------------------------------------------------------------------------
+
+Classes for radius
+
+    .rounded
+    .rounded-circle
+
+---------------------------------------------------------------------------------------------
+
+Classes for box-shadow
+    .shadow
+    .shadow-sm
+    .shadow-lg
+
+---------------------------------------------------------------------------------------------
+
+Classes for img
+    .img-fluid - it control width of photo
+    .img-thumbnail - 
+
+----------------------------------------------------------------------------------------------
+
+Classes for card
+    .card - Parent class
+    .card-header - Child
+    .card-body - Child
+    .card-footer - Child
+
+-----------------------------------------------------------------------------------------------
+
+Classes for left navigation
+    .lis-group
+    .list-group-item
+    .active
