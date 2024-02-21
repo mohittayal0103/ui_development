@@ -1,10 +1,12 @@
--->BOOTSTRAP is a library of css it was intoduced by twitter in 2011 
+-->BOOTSTRAP is a library of CSS, it was intoduced by twitter in 2011 
 -->it is the first framework of html css javascript
 
 
-library-means 1 language
-framework- meansmore than 1 language
+library   - means 1 language
+framework - means more than 1 language
+
 ----> bootstrap is used to responsive webpage desgining.
+
 the bootstrap divide all type of devices in 6 categories based on screen width
    1. extra small devices - 1px to 576px window width
    2. small devices - 576px to 768px window width 
@@ -185,7 +187,6 @@ Calsses for text allignment
 --------------------------------------------------------------------------------------------
 
 Classes for radius
-
     .rounded
     .rounded-circle
 
@@ -200,7 +201,7 @@ Classes for box-shadow
 
 Classes for img
     .img-fluid - it control width of photo
-    .img-thumbnail - 
+    .img-thumbnail 
 
 ----------------------------------------------------------------------------------------------
 
@@ -213,6 +214,38 @@ Classes for card
 -----------------------------------------------------------------------------------------------
 
 Classes for left navigation
-    .lis-group
+    .list-group
     .list-group-item
     .active
+
+------------------------------------------------------------------------------------------------
+
+Classes for table
+    .table
+    .table-bordered
+    .table-striped
+    .table-sm
+
+-------------------------------------------------------------------------------------------------
+
+Classes for input element
+    .form-control - use in (text, password, textarea, email, number, date, file)
+    .form-select - use in select box 
+
+*****for different size*****
+
+    .form-control-sm
+    .form-control-lg
+
+--------------------------------------------------------------------------------------------------
+
+Classes for button
+    .btn
+    .btn-danger         red
+    .btn-success        green
+    .btn-primary        blue
+    .btn-info           skyblue
+    .btn-warning        yellow
+    .btn-secondary      grey
+    .btn-light          white
+    .btn-dark           black
