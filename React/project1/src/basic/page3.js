@@ -8,7 +8,7 @@ const MyCustomer = () => {
   ];
 
   return (
-    <div>
+    <div className="container">
       <h1> Manage Customer : {allCustomer.length} </h1>
       {allCustomer.map((customer, index) => {
         return (

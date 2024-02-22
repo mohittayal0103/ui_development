@@ -9,9 +9,9 @@ const MyBook = () => {
     { name: "Informatica", price: 1000, author: "Manan", publish: true },
   ];
   return (
-    <div>
+    <div className="container">
       <h1> Manage Book : {allBook.length} </h1>
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <th>Serial No</th>

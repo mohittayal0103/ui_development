@@ -2,10 +2,10 @@ const Myuser = () => {
   let userlist = ["Alex", "Manoj", "Sekhar", "Sunil", "Ravi", "Anand"];
 
   return (
-    <div>
+    <div className="container">
       <h1> Manage User : {userlist.length}</h1>
       {userlist.map((fullname, index) => {
-        return <p key={index}> {fullname} </p>;
+        return <p className="four" key={index}> {fullname} </p>;
       })}
     </div>
   );
