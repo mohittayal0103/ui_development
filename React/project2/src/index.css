@@ -48,7 +48,7 @@ th{
 
 th,td,tr {
   padding: 8px 50px 8px;
-  border: 0.3px solid rgb(50, 50, 50);
+  border: 0.3px solid orange;
 }
 
 fieldset {
