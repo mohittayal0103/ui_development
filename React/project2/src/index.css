@@ -87,3 +87,9 @@ header{
   margin-bottom: 40px;
   background-color: skyblue;
 }
+
+.hook3{
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
