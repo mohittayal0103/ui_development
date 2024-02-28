@@ -3,6 +3,11 @@
     <link rel="stylesheet" href="dist/css/bootstrap.css" />
     <link rel="stylesheet" href="icon/css/all.css" />
     <script src="dist/js/bootstrap.bundle.js"></script>
+    <style>
+      .justify {
+        text-align: justify;
+      }
+    </style>
   </head>
   <body>
     <section class="p-2 bg-light">
@@ -22,10 +27,11 @@
         </div>
       </div>
     </section>
+
     <!--top nav start-->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">MT Square</a>
+        <a class="navbar-brand shadow-lg" href="#"><i class="fa fa-search fa-lg text-warning"></i>MT Square</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,19 +44,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item me-3">
-              <a class="nav-link" href="home.html"><i class="fa fa-home"></i> Home</a>
+              <a class="nav-link" href="home.html"
+                ><i class="fa fa-home"></i> Home</a
+              >
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link" href="service.html"><i class="fa fa-tools"></i> Our Services </a>
+              <a class="nav-link" href="service.html"
+                ><i class="fa fa-tools"></i> Our Services
+              </a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link active" href="signup.html"><i class="fa fa-user-plus"></i> Create Account </a>
+              <a class="nav-link active" href="signup.html"
+                ><i class="fa fa-user-plus"></i> Create Account
+              </a>
             </li>
-            <li class="nav-item me-3">
-                <a class="nav-link" href="login.html"><i class="fa fa-lock"></i> Login </a>
-              </li>
+            <li class="nav-item me-4">
+              <a class="nav-link" href="login.html"
+                ><i class="fa fa-lock"></i> Login
+              </a>
+            </li>
           </ul>
           <form class="d-flex" role="search">
             <input
@@ -59,13 +73,95 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
+            <button class="btn btn-warning" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
     <!--top nav end-->
+    <section class="bg-light p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4"></div>
+          <div class="col-xl-4">
+            <div class="card border-0 shadow-lg mt-1">
+              <div class="card-header bg-danger text-white">
+                <i class="fa fa-user-plus"></i>  Create Account
+              </div>
+              <div class="card-body">
+                <div class="mb-3 mt-1">
+                  <label>Full Name: </label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="mb-3 mt-2">
+                  <label>Email Id: </label>
+                  <input type="email" class="form-control" />
+                </div>
+                <div class="mb-3 mt-2">
+                  <label>Mobile No: </label>
+                  <input type="number" class="form-control" />
+                </div>
+                <div class="mb-3 mt-2">
+                  <label>Password:</label>
+                  <input type="password" class="form-control" />
+                </div>
+                <div class="mb-3 mt-2">
+                  <label>Address:</label>
+                  <textarea class="form-control"></textarea>
+                </div>
+                <div class="text-center mb-2">
+                  <button class="btn btn-primary">
+                    Signup <i class="fa fa-user-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--3 end-->
+        </div>
+        <!--row end-->
+      </div>
+      <!--container end-->
+    </section>
+    <footer class="bg-dark text-white p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4">
+            <h5 class="text-warning">About Us</h5>
+            <p>
+              dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg fdg fdg dfd dfg dfg dfg
+              dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg fdg fdg dfd dfg dfg dfg
+              dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg fdg fdg dfd dfg dfg dfg
+              dfg dfg dfg dfg dfg dfg dfg dfg
+            </p>
+          </div>
+          <!--4 End-->
+          <div class="col-xl-4">
+            <h5 class="text-warning">Contact Us</h5>
+            <p>#B004, NCC Nagarjuna Maple Heights.</p>
+            <p>mohittayal0103@gmail.com</p>
+            <p>+91 86996-86065</p>
+          </div>
+          <!--4 End-->
+          <div class="col-xl-4">
+            <h5 class="text-warning">Follow in Social Media</h5>
+            <p>
+              <i class="fab fa-facebook text-primary me-1 fa-lg"></i>
+              www.facebook.com
+            </p>
+            <p>
+              <i class="fab fa-twitter text-info me-1 fa-lg"></i>
+              www.twitter.com
+            </p>
+            <p><i class="fab fa-linkedin me-1 fa-lg"></i> www.linkedin.com</p>
+            <p>
+              <i class="fab fa-instagram text-secondary me-1 fa-lg"></i>
+              www.instagram.com
+            </p>
+          </div>
+          <!--4 End-->
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

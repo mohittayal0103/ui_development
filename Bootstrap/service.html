@@ -3,6 +3,17 @@
     <link rel="stylesheet" href="dist/css/bootstrap.css" />
     <link rel="stylesheet" href="icon/css/all.css" />
     <script src="dist/js/bootstrap.bundle.js"></script>
+    <style>
+      .servicepic{min-height: 400px;}
+      @media screen and (min-width:1px) and (max-width: 700px){
+        .servicepic{min-height: 500px !important;}
+      }
+
+      .justify {
+        text-align: justify;
+      }
+    
+    </style>
   </head>
   <body>
     <section class="p-2 bg-light">
@@ -22,10 +33,13 @@
         </div>
       </div>
     </section>
+
     <!--top nav start-->
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">MT Square</a>
+        <a class="navbar-brand shadow-lg" href="#"
+          ><i class="fa fa-search fa-lg text-warning"></i>MT Square</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -38,19 +52,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
             <li class="nav-item me-3">
-              <a class="nav-link" href="home.html"><i class="fa fa-home"></i> Home</a>
+              <a class="nav-link" href="home.html"
+                ><i class="fa fa-home"></i> Home</a
+              >
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link active" href="service.html"><i class="fa fa-tools"></i> Our Services </a>
+              <a class="nav-link active" href="service.html"
+                ><i class="fa fa-tools"></i> Our Services
+              </a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link" href="signup.html"><i class="fa fa-user-plus"></i> Create Account </a>
+              <a class="nav-link" href="signup.html"
+                ><i class="fa fa-user-plus"></i> Create Account
+              </a>
             </li>
-            <li class="nav-item me-3">
-                <a class="nav-link" href="login.html"><i class="fa fa-lock"></i> Login </a>
-              </li>
+            <li class="nav-item me-4">
+              <a class="nav-link" href="login.html"
+                ><i class="fa fa-lock"></i> Login
+              </a>
+            </li>
           </ul>
           <form class="d-flex" role="search">
             <input
@@ -59,13 +81,130 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
+            <button class="btn btn-warning" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
     <!--top nav end-->
+
+    <!-- Banner Start -->
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="2.jpg" height="300" width="100%" class="servicepic"/>
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Website Development Company in Bangalore</h1>
+              <div class="row mt-5 mb-5">
+                <h5 class="col-xl-3 mb-4"> Digital Marketing</h5>
+                <h5 class="col-xl-3 mb-4"> Social Media Marketing</h5>
+                <h5 class="col-xl-3 mb-4"> Facebook Marketing</h5>
+                <h5 class="col-xl-3 mb-4"> Twitter Marketing</h5>
+              </div>
+              <p><a class="btn btn-lg btn-primary" href="signup.html">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner End -->
+
+    <section class="p-5">
+      <div class="container">
+        <div class="row mb-5">
+          <h2 class="col-xl-12 text-center text-info">
+            <i class="fa fa-tools"></i> Our Services
+          </h2>
+        </div>
+        <!--row end-->
+        <div class="row mb-5 text-center">
+          <div class="col-xl-4">
+            <div class="p-4 shadow-lg rounded">
+              <i class="fa fa-desktop fa-4x text-danger mb-3"></i>
+              <h4>Website Development</h4>
+              <p class="justify">
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg
+              </p>
+            </div>
+          </div>
+          <!--4 end-->
+          <div class="col-xl-4">
+            <div class="p-4 shadow-lg rounded">
+              <i class="fa fa-search fa-4x text-warning mb-3"></i>
+              <h4>Digital Marketing</h4>
+              <p class="justify">
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg
+              </p>
+            </div>
+          </div>
+          <!--4 end-->
+          <div class="col-xl-4">
+            <div class="p-4 shadow-lg rounded">
+              <i class="fa fa-mobile fa-4x text-success mb-3"></i>
+              <h4>Mobile App Development</h4>
+              <p class="justify">
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg
+                dfg
+              </p>
+            </div>
+          </div>
+          <!--4 end-->
+        </div>
+        <!--row end-->
+      </div>
+      <!--container end-->
+    </section>
+    <footer class="bg-dark text-white p-5 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4">
+            <h5 class="text-warning">About Us</h5>
+            <p>
+              dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg fdg fdg dfd dfg dfg dfg
+              dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg fdg fdg dfd dfg dfg dfg
+              dfg dfg dfg dfg dfg dfg dfg dfg dfg dfg fdg fdg dfd dfg dfg dfg
+              dfg dfg dfg dfg dfg dfg dfg dfg
+            </p>
+          </div>
+          <!--4 End-->
+          <div class="col-xl-4">
+            <h5 class="text-warning">Contact Us</h5>
+            <p>#B004, NCC Nagarjuna Maple Heights.</p>
+            <p>mohittayal0103@gmail.com</p>
+            <p>+91 86996-86065</p>
+          </div>
+          <!--4 End-->
+          <div class="col-xl-4">
+            <h5 class="text-warning">Follow in Social Media</h5>
+            <p>
+              <i class="fab fa-facebook text-primary me-1 fa-lg"></i>
+              www.facebook.com
+            </p>
+            <p>
+              <i class="fab fa-twitter text-info me-1 fa-lg"></i>
+              www.twitter.com
+            </p>
+            <p><i class="fab fa-linkedin me-1 fa-lg"></i> www.linkedin.com</p>
+            <p>
+              <i class="fab fa-instagram text-secondary me-1 fa-lg"></i>
+              www.instagram.com
+            </p>
+          </div>
+          <!--4 End-->
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
