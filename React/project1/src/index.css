@@ -68,11 +68,47 @@ legend {
 }
 
 .toplink {
-  margin: 10px;
-  font-size: 18px;
+  margin-left: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 header {
   text-align: center;
   padding: 15px;
+  background-color: rgb(3, 71, 154);
+}
+
+#inputarea input{
+  height: 27px;
+  padding: 3px;
+  margin: 10px;
+  width: 200px;
+  border-radius: 5px;  
+}
+
+#inputarea button{
+  margin: 7px;
+  padding: 7px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  background: blue;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+}
+
+#inputarea{
+  margin: 15px;
+  text-align: center;
+}
+
+p input{
+  height: 30px;
+  padding: 5px;
+  margin: 20px;
+  width: 250px;
+  border-radius: 5px; 
 }

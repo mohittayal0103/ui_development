@@ -6,6 +6,7 @@ import MyCustomer from "./basic/page3.js";
 import MyItem from "./basic/page4.js";
 import Hook1 from "./hooks/page6.js";
 import Hook2 from "./hooks/page7.js";
+import Hook3 from "./hooks/page8.js";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Link to="/item" className="toplink"> Manage Item </Link>
         <Link to="/hook1" className="toplink"> Hook-1 </Link>
         <Link to="/hook2" className="toplink"> Hook-2 </Link>
+        <Link to="/hook3" className="toplink"> Hook-3 </Link>
       </header>
 
       <Routes>
@@ -26,6 +28,7 @@ function App() {
         <Route exact path="/item" element={<MyItem />}/>
         <Route exact path="/hook1" element={<Hook1 />}/>
         <Route exact path="/hook2" element={<Hook2 />}/>
+        <Route exact path="/hook3" element={<Hook3 />}/>
       </Routes>
     </HashRouter>
   );
