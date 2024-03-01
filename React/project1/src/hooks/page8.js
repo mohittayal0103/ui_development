@@ -15,53 +15,59 @@ const Hook3 = () => {
   let [cityname, pickCity] = useState("");
   let [empsalary, pickSalary] = useState("");
   let [empskill, pickSkill] = useState("");
+  let[message, updateMessage] = useState("Enter Employee Details !");
 
   const save = () => {
-    if (indexId == -1) {
-      let editEmp = {
-        ename: fullname,
-        city: cityname,
-        slry: empsalary,
-        skills: empskill,
-      };
+    let newEmp = {
+      ename: fullname,
+      city: cityname,
+      slry: empsalary,
+      skills: empskill,
+    };
 
-      updateEmp([...emplist, editEmp]);
-      pickName("");
-      pickCity("");
-      pickSalary("");
-      pickSkill("");
+    if (userindex != -1) {
+      emplist[userindex] = newEmp;
+      updateMessage(fullname+", Updated Successfully !")
+      setTimeout(changeHeader, 3000);
+      updateIndex(-1);
     } else {
-      let newEmp = {
-        ename: fullname,
-        city: cityname,
-        slry: empsalary,
-        skills: empskill,
-      };
-
       updateEmp([...emplist, newEmp]);
-      pickName("");
-      pickCity("");
-      pickSalary("");
-      pickSkill("");
+      updateMessage(fullname+", Saved Successfully !")
+      setTimeout(changeHeader, 3000);
     }
+    pickName("");
+    pickCity("");
+    pickSalary("");
+    pickSkill("");
   };
 
-  let indexId = -1;
-  const editEmp = (index) => {
-    indexId = index;
+  let [userindex, updateIndex] = useState(-1);
 
+  const editEmp = (details, index) => {
+    updateIndex(index);
+    pickName(details.ename);
+    pickCity(details.city);
+    pickSalary(details.slry);
+    pickSkill(details.skills);
   };
 
-  const deleteEmp = (index) => {
+  const deleteEmp = (index, ename) => {
     emplist.splice(index, 1);
     updateEmp([...emplist]);
+    updateMessage(ename+", Deleted Successfully !")
+    setTimeout(changeHeader, 3000);
   };
 
   let [keyword, pickKeyword] = useState("");
 
+  const changeHeader = () => {
+    updateMessage("Enter Employee Details !")
+  }
+
   return (
     <section className="container">
       <h1> Array of Object Add, List, Delete, Update </h1>
+      <p align='center'> {message} </p>
       <div id="inputarea">
         <input
           type="text"
@@ -90,10 +96,14 @@ const Hook3 = () => {
         <button onClick={save}>Save Employee</button>
       </div>
 
-      <p align="center"> 
-        Total Employee : {emplist.length} 
-        <br/>
-        <input type="text" placeholder="Search Employee" onChange={obj=>pickKeyword(obj.target.value)}/>
+      <p align="center">
+        Total Employee : {emplist.length}
+        <br />
+        <input
+          type="text"
+          placeholder="Search Employee Name"
+          onChange={(obj) => pickKeyword(obj.target.value)}
+        />
       </p>
 
       <table>
@@ -110,22 +120,32 @@ const Hook3 = () => {
         </thead>
         <tbody>
           {emplist.map((emp, index) => {
-            if( emp.ename.toLowerCase().match(keyword.toLowerCase()) )
-            return (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{emp.ename}</td>
-                <td>{emp.city}</td>
-                <td>{emp.slry}</td>
-                <td>{emp.skills}</td>
-                <td>
-                  <button onClick={editEmp}>Edit</button>
-                </td>
-                <td>
-                  <button onClick={deleteEmp.bind(this, index)}>Delete</button>
-                </td>
-              </tr>
-            );
+            let key = keyword.toLowerCase();
+            let n = emp.ename.toLowerCase();
+            let c = emp.city.toLowerCase();
+            let s = emp.slry.toString();
+            let sk = emp.skills.toLowerCase();
+
+            if (n.match(key) || c.match(key) || s.match(key) || sk.match(key))
+              return (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{emp.ename}</td>
+                  <td>{emp.city}</td>
+                  <td>{emp.slry}</td>
+                  <td>{emp.skills}</td>
+                  <td>
+                    <button onClick={editEmp.bind(this, emp, index)}>
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button onClick={deleteEmp.bind(this, index, emp.ename)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
           })}
         </tbody>
       </table>
