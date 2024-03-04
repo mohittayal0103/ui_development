@@ -1,32 +1,83 @@
 import { useState } from "react";
 
-const Hook6 = () => {
-    let[allimage, updateImage] = useState (["1.jpg", "2.jpg", "3.png", "4.jpg"]);
+const Hook4 = () =>{
+    let[details, updateDetails] = useState( {name:"" , email:"", mobile:"", skill:""} );
+    let[fullname, pickName] = useState("");
+    let[emailid, pickEmail] = useState("");
+    let[mobile, pickMobile] = useState("");
+    let[skill, pickSkill] = useState("");
+    let[edu, pickEdu] = useState("");
 
-    let[showimage, updateShowImage] = useState(allimage[0]);
+    const save = () =>{
+        updateDetails( {name:fullname , email:emailid, mobile:mobile, skill:skill} );
+    }
 
     return(
         <div className="container">
-            <h1>State Management</h1>
-            <div>
-                <img src={showimage} height="400" width="600" />
+            <h1> How to Update an Object </h1>
+            <table align="left">
+                <tbody>
+                    <tr>
+                        <td> Name </td>
+                        <td> <input type="text" onChange={ obj=>pickName(obj.target.value) }/> </td>
+                    </tr>
+                    <tr>
+                        <td> e-Mail </td>
+                        <td> <input type="text" onChange={ obj=>pickEmail(obj.target.value) }/> </td>
+                    </tr>
+                    <tr>
+                        <td> Mobile </td>
+                        <td> <input type="text" onChange={ obj=>pickMobile(obj.target.value) }/> </td>
+                    </tr>
+                    <tr>
+                        <td> Skills </td>
+                        <td> <textarea rows="5" cols="30" onChange={ obj=>pickSkill(obj.target.value) }></textarea> </td>
+                    </tr>
+                    <tr>
+                        <td> Education </td>
+                        <td> 
+                            <select onChange={ obj=>pickEdu(obj.target.value) }>
+                                <option value="">Choose</option>
+                                <option>MCA</option>
+                                <option>BCA</option>
+                                <option>M.Tech</option>
+                            </select>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2} align="center">
+                            <button onClick={save}> Process </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <br/><br/>
-                {
-                    allimage.map((url,index)=>{
-                        return(
-                            <img 
-                            key={index} 
-                            src={url} 
-                            height="120" 
-                            width="150" 
-                            onMouseEnter={updateShowImage.bind(this,url)}/>
-                        );
-                    })
-                }
-            </div>
+            <table align="right" width="500">
+                <tbody>
+                    <tr>
+                        <td> Name </td>
+                        <td> {details.name} </td>
+                    </tr>
+                    <tr>
+                        <td> e-Mail </td>
+                        <td> {details.email} </td>
+                    </tr>
+                    <tr>
+                        <td> Mobile </td>
+                        <td> {details.mobile} </td>
+                    </tr>
+                    <tr>
+                        <td> Skills </td>
+                        <td> {details.skill} </td>
+                    </tr>
+                    <tr>
+                        <td> Education </td>
+                        <td> {edu} </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    );
+    )
 }
 
-export default Hook6;
+export default Hook4;
