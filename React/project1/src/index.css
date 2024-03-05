@@ -135,3 +135,10 @@ button{
   width: 150px;
   font-size: 18px;
 }
+
+.blog{
+  margin: 2%;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
