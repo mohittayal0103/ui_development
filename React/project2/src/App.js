@@ -8,6 +8,8 @@ import Hook1 from "./hooks/hook1";
 import Hook2 from "./hooks/hook2";
 import Hook3 from "./hooks/hook3";
 import Hook4 from "./hooks/hook4";
+import Hook5 from "./hooks/hook5";
+import Hook6 from "./hooks/hook6";
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
         <Link to="/hook2" className="toplink">Hook2</Link>
         <Link to="/hook3" className="toplink">Hook3</Link>
         <Link to="/hook4" className="toplink">Hook4</Link>
+        <Link to="/hook5" className="toplink">Hook5</Link>
+        <Link to="/hook6" className="toplink">Hook6</Link>
+
       </header>
       
       <Routes>
@@ -42,6 +47,8 @@ function App() {
         <Route exact path="/hook2" element={<Hook2/>} />
         <Route exact path="/hook3" element={<Hook3/>} />
         <Route exact path="/hook4" element={<Hook4/>} />
+        <Route exact path="/hook5" element={<Hook5/>} />
+        <Route exact path="/hook6" element={<Hook6/>} />
       </Routes>
     </HashRouter>
   );
