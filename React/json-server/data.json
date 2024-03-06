@@ -1,0 +1,48 @@
+{
+  "emplist": [
+    {
+      "id": "1",
+      "name": "Mohit Tayal",
+      "city": "Bangalore",
+      "salary": "25000",
+      "skill": "HTML, CSS, Javascript"
+    },
+    {
+      "id": "2",
+      "name": "Mihir Bagga",
+      "city": "Bangalore",
+      "salary": "50000",
+      "skill": "HTML, CSS, Javascript, React, Node"
+    },
+    {
+      "id": "cee6",
+      "name": "ads",
+      "city": "ads",
+      "salary": "a",
+      "skill": ""
+    },
+    {
+      "id": "a3b2",
+      "name": "",
+      "city": "",
+      "salary": "",
+      "skill": ""
+    },
+    {
+      "id": "8bba",
+      "name": "Mrinal Garg",
+      "city": "Ludhiana",
+      "salary": "45000",
+      "skill": "Service Now, MySQL"
+    }
+  ],
+  "productlist": [
+    {
+      "id": "1",
+      "pname": "Dell Keyboard",
+      "price": "500",
+      "qty": 5,
+      "seller": "Dell"
+    }
+  ]
+}
