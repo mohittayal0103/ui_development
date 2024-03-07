@@ -1,11 +1,11 @@
 {
   "emplist": [
     {
-      "id": "1",
       "name": "Mohit Tayal",
       "city": "Bangalore",
-      "salary": "25000",
-      "skill": "HTML, CSS, Javascript"
+      "salary": "35000",
+      "skill": "HTML, CSS, Javascript",
+      "id": "1"
     },
     {
       "id": "2",
@@ -15,25 +15,18 @@
       "skill": "HTML, CSS, Javascript, React, Node"
     },
     {
-      "id": "cee6",
-      "name": "ads",
-      "city": "ads",
-      "salary": "a",
-      "skill": ""
-    },
-    {
-      "id": "a3b2",
-      "name": "",
-      "city": "",
-      "salary": "",
-      "skill": ""
-    },
-    {
-      "id": "8bba",
       "name": "Mrinal Garg",
       "city": "Ludhiana",
       "salary": "45000",
-      "skill": "Service Now, MySQL"
+      "skill": "Service Now, My SQL",
+      "id": "6446"
+    },
+    {
+      "id": "d4fa",
+      "name": "Manan Chaudhary",
+      "city": "Gurugram",
+      "salary": "65000",
+      "skill": "Data Analysis, Power BI"
     }
   ],
   "productlist": [
@@ -50,13 +43,6 @@
       "price": "400",
       "qty": "10",
       "seller": "Dell"
-    },
-    {
-      "id": "4109",
-      "pname": "",
-      "price": "",
-      "qty": "",
-      "seller": ""
     }
   ]
 }
