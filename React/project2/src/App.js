@@ -12,6 +12,7 @@ import Hook5 from "./hooks/hook5";
 import Hook6 from "./hooks/hook6";
 import Myapi1 from "./api/myapi1";
 import Myapi2 from "./api/myapi2";
+import Myapi3 from "./api/myapi3";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Link to="/hook6" className="toplink">Hook6</Link>
         <Link to="/myapi1" className="toplink">MyApi1</Link>
         <Link to="/myapi2" className="toplink">MyApi2</Link>
+        <Link to="/myapi3" className="toplink">MyApi3</Link>
       </header>
       
       <Routes>
@@ -55,6 +57,7 @@ function App() {
         <Route exact path="/hook6" element={<Hook6/>} />
         <Route exact path="/myapi1" element={<Myapi1/>} />
         <Route exact path="/myapi2" element={<Myapi2/>} />
+        <Route exact path="/myapi3" element={<Myapi3/>} />
       </Routes>
     </HashRouter>
   );

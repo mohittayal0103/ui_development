@@ -43,6 +43,20 @@
       "price": "500",
       "qty": 5,
       "seller": "Dell"
+    },
+    {
+      "id": "599c",
+      "pname": "Dell Mouse",
+      "price": "400",
+      "qty": "10",
+      "seller": "Dell"
+    },
+    {
+      "id": "4109",
+      "pname": "",
+      "price": "",
+      "qty": "",
+      "seller": ""
     }
   ]
 }
