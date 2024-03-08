@@ -27,6 +27,12 @@
       "city": "Gurugram",
       "salary": "65000",
       "skill": "Data Analysis, Power BI"
+    },{
+      "id": "d4fa",
+      "name": "Mahima Tahkur",
+      "city": "Panchkula",
+      "salary": "80000",
+      "skill": "Informatica, Power BI, My SQL"
     }
   ],
   "productlist": [
