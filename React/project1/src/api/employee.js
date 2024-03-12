@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const Employee = () => {
   let [allemp, updateEmpList] = useState([]);
-  
 
   const getEmp = () => {
     fetch("http://localhost:1234/emplist")
@@ -12,12 +11,9 @@ const Employee = () => {
       });
   };
 
-
-
   useEffect(() => {
     getEmp();
   }, []);
-
 
   //Save Employee
   let [empname, pickName] = useState("");
@@ -49,8 +45,8 @@ const Employee = () => {
           pickSalary("");
           pickSkill("");
         });
-    }else{
-      let url = "http://localhost:1234/emplist/"+empid;
+    } else {
+      let url = "http://localhost:1234/emplist/" + empid;
       let newEmp = {
         name: empname,
         city: empcity,
@@ -100,7 +96,6 @@ const Employee = () => {
 
   //Search Employee
   let [keyword, pickKeyword] = useState("");
-
 
   return (
     <div className="contianer">
@@ -168,7 +163,9 @@ const Employee = () => {
                   <td>{emp.salary}</td>
                   <td>{emp.skill}</td>
                   <td>
-                    <button onClick={edit.bind(this, emp)}>Edit</button>
+                    <button onClick={edit.bind(this, emp)}>
+                      Edit
+                    </button>
                   </td>
                   <td>
                     <button onClick={deleteEmp.bind(this, emp.id)}>

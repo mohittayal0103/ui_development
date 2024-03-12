@@ -12,6 +12,8 @@ import Hook5 from "./hooks/page10.js";
 import Myapi1 from "./api/api1.js";
 import Myapi2 from "./api/api2.js";
 import Employee from "./api/employee.js";
+import Myapi3 from "./api/api3.js";
+import Myapi4 from "./api/api4.js";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
         <br/><br/>
         <Link to="/api1" className="toplink"> MyApi-1 </Link>
         <Link to="/api2" className="toplink"> MyApi-2 </Link>
-        <Link to="/api3" className="toplink"> Employee </Link>
+        <Link to="/employee" className="toplink"> Employee </Link>
+        <Link to="/api3/Mohit Tayal/Bangalore/BTech." className="toplink"> MyApi-3 </Link>
+        <Link to="/api4" className="toplink"> MyApi-4 </Link>
       </header>
 
       <Routes>
@@ -44,7 +48,9 @@ function App() {
         <Route exact path="/hook5" element={<Hook5 />}/>
         <Route exact path="/api1" element={<Myapi1 />}/>
         <Route exact path="/api2" element={<Myapi2 />}/>
-        <Route exact path="/api3" element={<Employee />}/>
+        <Route exact path="/employee" element={<Employee />}/>
+        <Route exact path="/api3/:name/:city/:edu" element={<Myapi3 />}/>
+        <Route exact path="/api4" element={<Myapi4 />}/>
       </Routes>
     </HashRouter>
   );
