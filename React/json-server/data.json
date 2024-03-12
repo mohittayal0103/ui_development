@@ -22,12 +22,13 @@
       "id": "6446"
     },
     {
-      "id": "d4fa",
       "name": "Manan Chaudhary",
       "city": "Gurugram",
       "salary": "65000",
-      "skill": "Data Analysis, Power BI"
-    },{
+      "skill": "Data Engineer, Data Science",
+      "id": "d4fa"
+    },
+    {
       "id": "d4fa",
       "name": "Mahima Thakur",
       "city": "Panchkula",
@@ -37,24 +38,17 @@
   ],
   "productlist": [
     {
-      "id": "1",
-      "pname": "Dell Keyboard",
-      "price": "500",
-      "qty": 5,
-      "seller": "Dell"
+      "id": "5a35",
+      "pname": "iball Speaker",
+      "price": "1200",
+      "qty": "12",
+      "seller": "iBall"
     },
     {
-      "id": "599c",
+      "id": "5acc",
       "pname": "Dell Mouse",
-      "price": "400",
-      "qty": "10",
-      "seller": "Dell"
-    },
-    {
-      "id": "599c",
-      "pname": "Dell Mouse",
-      "price": "400",
-      "qty": "10",
+      "price": "800",
+      "qty": "15",
       "seller": "Dell"
     }
   ]

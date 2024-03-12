@@ -46,7 +46,31 @@ const save = () =>{
         pickSeller("");
     })
 }
-    
+
+// Search Items
+let [keyword, pickKeyword] = useState("");
+
+ //Delete Product
+ const deleteProd = (prodid) => {
+    let url = "http://localhost:1234/productlist/" + prodid;
+    let postData = { method: "delete" };
+    fetch(url, postData)
+      .then((response) => response.json())
+      .then((prodDelete) => {
+        getProd();
+      });
+  }
+
+  //Edit Product
+  let [prodid, updateId] = useState("");
+  const edit = (proddata) => {
+    updateId(proddata.id);
+
+    pickName(proddata.pname);
+    pickPrice(proddata.price);
+    pickQty(proddata.qty);
+    pickSeller(proddata.seller);
+  };
 
 return(
         <div className="container">
@@ -65,7 +89,7 @@ return(
                 onChange={obj=>pickPrice(obj.target.value)}
                 value={prodprice}
                 />
-                <input 
+                <input
                 type="text"
                 placeholder="Enter Quantity"
                 onChange={obj=>pickQty(obj.target.value)}
@@ -86,6 +110,7 @@ return(
                 <input 
                 type="text"
                 placeholder="Search Product Name"
+                onChange={(obj) => pickKeyword(obj.target.value)}
                 />
             </p>
 
@@ -104,6 +129,7 @@ return(
                 <tbody>
                     {
                         allprod.map((prod, index)=>{
+                            // if((prod.name).toLowerCase().match(keyword.toLowerCase()))
                             return(
                                 <tr key={index}>
                                     <td>{prod.id}</td>
@@ -111,8 +137,8 @@ return(
                                     <td>{prod.price}</td>
                                     <td>{prod.qty}</td>
                                     <td>{prod.seller}</td>
-                                    <td><button>Edit</button></td>
-                                    <td><button>Delete</button></td>
+                                    <td><button onClick={edit.bind(this, prod)}>Edit</button></td>
+                                    <td><button onClick={deleteProd.bind(this, prod.id)}>Delete</button></td>
                                 </tr>
                             );
                         })
