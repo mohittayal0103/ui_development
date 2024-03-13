@@ -158,3 +158,26 @@ td button{
 .user {
   margin: 5px;
 }
+
+p button{
+  border: solid 2px skyblue;
+  outline: 1;
+  background: rgb(247, 247, 247);
+  color: skyblue;
+  margin: 7px;
+  padding: 3px;
+  border-radius: 5px;
+  width: 55px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+div table{
+  margin-top: 50px;
+  margin-left: 80px;
+}
