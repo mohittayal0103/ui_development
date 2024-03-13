@@ -14,6 +14,7 @@ import Myapi2 from "./api/api2.js";
 import Employee from "./api/employee.js";
 import Myapi3 from "./api/api3.js";
 import Myapi4 from "./api/api4.js";
+import ClientDetails from "./api/api4details.js";
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
         <Route exact path="/employee" element={<Employee />}/>
         <Route exact path="/api3/:name/:city/:edu" element={<Myapi3 />}/>
         <Route exact path="/api4" element={<Myapi4 />}/>
+        <Route exact path="/api4details/:clientid" element={<ClientDetails />}/>
+
       </Routes>
     </HashRouter>
   );
