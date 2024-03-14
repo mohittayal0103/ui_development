@@ -49,6 +49,7 @@ td,
 tr {
   padding: 5px 20px 5px;
   border: 0.3px solid skyblue;
+  border-radius: 5px;
 }
 
 fieldset {
@@ -149,9 +150,9 @@ td button{
   background: rgb(247, 247, 247);
   color: skyblue;
   margin: 7px;
-  padding: 5px;
+  padding: 3px;
   border-radius: 5px;
-  width: 75px;
+  width: 100px;
   font-size: 18px;
 }
 
