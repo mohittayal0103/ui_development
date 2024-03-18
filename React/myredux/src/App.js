@@ -1,4 +1,9 @@
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import MyApi from "./api";
+import MyUser from "./user";
+import MyProduct from "./product";
+import MyBook from "./book";
+import MyDashboard from "./dashboard";
 
 function App() {
   return (
@@ -19,6 +24,14 @@ function App() {
           </div>
         </div>
       </div>
+
+      <Routes>
+        <Route exact path="/api" element={<MyApi/>} />
+        <Route exact path="/user" element={<MyUser/>} />
+        <Route exact path="/product" element={<MyProduct/>} />
+        <Route exact path="/book" element={<MyBook/>} />
+        <Route exact path="/" element={<MyDashboard/>} />
+      </Routes>
     </HashRouter>
   );
 }
