@@ -31,7 +31,7 @@ const save = () =>{
     }
 
     let postData = {
-        headers:{'Content-Type':'application/json'},
+        headers:{'Content-Type': 'application/json'},
         method: 'post',
         body: JSON.stringify(newProd)
     }
