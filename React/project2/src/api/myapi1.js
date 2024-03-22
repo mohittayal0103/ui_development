@@ -84,7 +84,7 @@ const Myapi1 = () => {
             </fieldset>
 
             <fieldset>
-                <legend>All  Employees: {allemp.length}</legend>
+                <legend>All Employees: {allemp.length}</legend>
                 {
                     allemp.map((emp, index)=>{
                         return(
