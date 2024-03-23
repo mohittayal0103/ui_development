@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Userlist from "./usereducer";
 
 const MyUser = () => {
