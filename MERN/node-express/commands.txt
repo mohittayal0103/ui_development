@@ -1,0 +1,5 @@
+----in node-express----
+Npm install -g nodemon
+Npm install express
+Npm install body-parser
+Npm install cors
