@@ -11,7 +11,7 @@ http
       "React",
       "NodeJS",
       "MongoDB",
-      "express",
+      "Express",
     ];
 
     let jsonData = JSON.stringify(booklist); //converting array to json
@@ -19,6 +19,5 @@ http
     res.write(jsonData);
 
     res.end();
-
   })
   .listen(1111);
