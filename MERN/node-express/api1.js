@@ -49,6 +49,17 @@ let jsonData = JSON.stringify(allbook1);
 res.send(jsonData);
 }); //http://localhost:2222/allbook1
 
+app.get("/alldata", (req,res) => {
+  let alldata = {
+    "citylist":['Bangalore', 'Chennai', 'Kolkata', 'Delhi', 'Patna', 'Mumbai'],
+    "userlist":['Alex', 'Sumit', 'Mohit', 'Raj', 'Manoj', 'Puri'],
+    "booklist":['HTML', 'CSS', 'BootStrap', 'JavaScript', 'React', 'Node']
+  }
+
+  let jsonData = JSON.stringify(alldata);
+  res.send(jsonData);
+}) //http://localhost:2222/alldata
+
 app.listen(2222, function () {
   console.log("Server Started on http://localhost:2222");
 });
