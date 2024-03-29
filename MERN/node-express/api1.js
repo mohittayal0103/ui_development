@@ -34,8 +34,20 @@ app.get("/allbook", (req, res) => {
 
   let jsonData = JSON.stringify(allbook);
   res.send(jsonData);
-}); //http://localhost:2222/allbook
+}); //http://localhost:2222/allbook 
 
+app.get("/allbook1", (req, res) => {
+  let allbook1 = [
+    {name:"HTML", price:3000, seller:"Uttu", city:['bangalore','pune']},
+    {name:"CSS", price:4000, seller:"Mohit", city:['chennai','hyderabad','bangalore']},
+    {name:"React", price:5000, seller:"Mihir", city:['delhi']},
+    {name:"NodeJS", price:6000, seller:"Mrinal", city:['mumbai']},
+    {name:"MongoDB", price:7000, seller:"Manan", city:[]}
+]
+
+let jsonData = JSON.stringify(allbook1);
+res.send(jsonData);
+}); //http://localhost:2222/allbook1
 
 app.listen(2222, function () {
   console.log("Server Started on http://localhost:2222");
