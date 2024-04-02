@@ -85,7 +85,7 @@ app.post("/savemsg", (req, res) => {
     fs.appendFile("allmessage.txt", data, function(err, filedata){
       let jsonData = JSON.stringify({message: "Message Received Successfully !"});
       res.send(jsonData);
-    }); // post new content into a file through appenfile func
+    }); // post new content into a file through append file func
   }
 }); //http://localhost:2222/savemsg 
 
