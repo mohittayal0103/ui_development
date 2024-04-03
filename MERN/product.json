@@ -1,0 +1,8 @@
+[
+    {"pname":"Keyboard", "price":800, "qty":10, "seller":"Alex"},
+    {"pname":"Mouse", "price":500, "qty":5, "seller":"Mihir"},
+    {"pname":"Pen", "price":300, "qty":10, "seller":"Manan"},
+    {"pname":"Book", "price":500, "qty":5, "seller":"Mrinal"},
+    {"pname":"Laptop", "price":60000, "qty":10, "seller":"Utkarsh"},
+    {"pname":"Speaker", "price":3000, "qty":5, "seller":"Mahima"}
+]
