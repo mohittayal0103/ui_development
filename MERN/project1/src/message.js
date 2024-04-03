@@ -15,10 +15,33 @@ const Message = () => {
     .then(response=>response.json())
     .then(info=>{
         alert(info.message);
+        getMessage();
     })
     pickMessage("");
   };
 
+  let [allmessage, updateMessage] = useState([]);
+
+  const getMessage = () => {
+    fetch("http://localhost:2222/messagelist")
+    .then(response=>response.text())
+    .then(fileData=>{
+      let messageArray = fileData.split("#")
+      messageArray.pop();
+      updateMessage(messageArray.reverse());
+    })
+  }
+
+  const deletemessage = () => {
+    fetch("http://localhost:2222/clearfile")
+    .then(response=>response.json())
+    .then(info=>{
+      alert(info.message);
+      getMessage();
+    })
+  }
+
+    
   return (
     <div className="container mt-4">
       <div className="row">
@@ -36,6 +59,26 @@ const Message = () => {
               Save{" "}
             </button>
           </p>
+        </div>
+        <div className="col-lg-2"></div>
+        <div className="col-lg-6 text-center ">
+          <button onClick={getMessage} className="btn btn-success mt-4"> Show All Message </button>
+        </div>
+        <div className="col-lg-6 text-center ">
+          <button onClick={deletemessage} className="btn btn-danger mt-4"> Delete All Message </button>
+        </div>
+        <div className="col-lg-2"></div>
+        <div className="col-lg-8 text-center mt-5">
+          <h3> Total Msg : {allmessage.length}</h3>
+          {
+            allmessage.map((msg, index)=>{
+              return (
+                <div className="mt-4 mb-4 rounded border p-3" key={index}>
+                  <p>{msg}</p>
+                </div>
+              )
+            })
+          }
         </div>
         <div className="col-lg-2"></div>
       </div>
