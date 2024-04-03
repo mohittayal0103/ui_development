@@ -81,13 +81,30 @@ app.post("/savemsg", (req, res) => {
     res.send(jsonData);
   } 
   else {
-    data = data + " - Posted on: " + new Date().toLocaleString() + "\n";
+    data = data + " - Posted on: " + new Date().toLocaleString() + "#\n";
     fs.appendFile("allmessage.txt", data, function(err, filedata){
       let jsonData = JSON.stringify({message: "Message Received Successfully !"});
       res.send(jsonData);
     }); // post new content into a file through append file func
   }
 }); //http://localhost:2222/savemsg 
+
+//--------------------------------------------------------
+
+app.get("/messagelist", (req, res) => {
+  fs.readFile("allmessage.txt", function(err, filedata){
+    res.send(filedata);
+  })
+})
+
+//--------------------------------------------------------
+
+app.get("/clearfile", (req,res)=>{
+  fs.writeFile("allmessage.txt", "", function(err, filedata){
+    let jsonData = JSON.stringify({message: "Message Deleted Successfully !"});
+    res.send(jsonData);
+  });
+})
 
 //--------------------------------------------------------
 
