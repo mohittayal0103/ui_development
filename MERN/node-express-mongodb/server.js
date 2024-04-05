@@ -9,5 +9,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/company") // importing mongoose data
 const db = mongoose.connection;
 
 //checking connection is established or not 
-db.on("error", (error)=>console("Error in database connection")); 
+db.on("error", (error)=>console.log("Error in database connection")); 
 db.on("open", ()=>console.log("Database is Connected..."));
+
+const User = require("./userapi");
+
+app.use("/user", User); 
+// http://localhost:4444/user (get,post,put,delete)
+
+app.listen(4444, function(){
+    console.log("The server is live...")
+})
