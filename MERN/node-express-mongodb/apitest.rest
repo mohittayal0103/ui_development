@@ -1,0 +1,17 @@
+get http://localhost:4444/user
+
+
+###
+post http://localhost:4444/user
+Content-Type: application/json
+
+{
+    "uname":"Ganesh",
+    "umobile": "8750405871",
+    "uemail": "abc@gmail.com",
+    "uaddress": "Mumbai Maharashtra"
+}
+
+
+###
+get http://localhost:4444/user/660fef59bc72dcd2a8f557b5
