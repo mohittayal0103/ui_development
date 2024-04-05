@@ -4,7 +4,25 @@ module.exports = router;
 
 const User = require("./userschema");
 
-router.get("/", (req, res) => {
-    let data = {"message":"Your User Api is Working"};
-    res.status(200).json(data);
-})
+router.get("/", async (req, res) => {
+  let userlist = await User.find();
+  res.status(200).json(userlist);
+});
+
+router.post("/", async (req, res) => {
+  let newuser = User({
+    fullname: req.body.uname,
+    mobile: req.body.umobile,
+    email: req.body.uemail,
+    address: req.body.uaddress,
+  });
+
+  let info = await newuser.save();
+  res.status(200).json(info);
+});
+
+router.get("/:id", async (req, res) => {
+    let id = req.params.id;
+    let userlist = await User.findById(id);
+    res.status(200).json(userlist);
+  });
