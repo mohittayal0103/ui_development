@@ -7,11 +7,11 @@ Content-Type: application/json
 
 {
     "uname":"Ganesh",
-    "umobile": "8750405871",
-    "uemail": "abc@gmail.com",
-    "uaddress": "Mumbai Maharashtra"
+    "umobile":"8989898989",
+    "uemail":"abc@gmail.com",
+    "uaddress":"Mumbai Maharashtra"
 }
 
 
 ###
-get http://localhost:4444/user/660fef59bc72dcd2a8f557b5
+get http://localhost:4444/user/660ff10212455e245ece1c9a
