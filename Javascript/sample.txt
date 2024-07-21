@@ -5,13 +5,12 @@
   <style>
   
   </style>
-  <script>
-
-  </script>
 </head>
 
 <body>
-  <h1></h1>
+  <script>
+
+  </script>
 </body>
 
 </html>
@@ -19,4 +18,4 @@
 
 
 What is event?
-The type of user interaction with UI is called even in terms of JavaScript.
+The type of user interaction with UI is called event in terms of JavaScript.

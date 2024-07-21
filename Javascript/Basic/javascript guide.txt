@@ -2,11 +2,11 @@
 In javascript variable length is upto memory size. 
 
 What is memory size?
-- It depends on the which browser you are using your code basically its different for sifferent browser. 
+- It depends on the which browser you are using your code basically its different for different browser. 
 however it mostly lies between 2mb to 10mb
 
 
-What is the diff bw foreach map and filter?
+What is the diff bw foreach, map and filter?
 
 This is called listing function in javascript.
 it is specially designed for array purpose, we can read and print the data from array.
