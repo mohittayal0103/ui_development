@@ -52,7 +52,7 @@ const Hook4 = () =>{
                 </tbody>
             </table>
 
-            <table align="right" width="500">
+            <table align="right" width="400">
                 <tbody>
                     <tr>
                         <td> Name </td>
