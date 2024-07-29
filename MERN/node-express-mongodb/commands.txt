@@ -1,9 +1,0 @@
-------in rest-api------
-Npm install -g nodemon
-Npm install express
-Npm install body-parser
-Npm install cors
-Npm install multer
-Npm install mongoose
-Npm install uuid
- 
