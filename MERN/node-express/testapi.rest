@@ -3,3 +3,11 @@ get http://localhost:1111/userlist
 ###
 
 get http://localhost:1111/booklist
+
+###
+post http://localhost:2222/savemsg
+Content-Type: application/json
+
+{
+    "newmsg":"How Are You ?"
+}
