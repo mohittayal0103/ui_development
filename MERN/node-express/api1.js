@@ -36,10 +36,15 @@ app.get("/booklist", (req, res)=>{
 
 
 // http://localhost:2222/savemsg
+const fs = require("fs");
+
 app.post("/savemsg", (req, res) => {
-    let message = req.body.newmsg;
-    res.send("Hi, We received your message! -> " + message);
-    res.end;
+    let message = req.body.newmsg+"\n";
+    fs.appendFile("allmessage.txt", message, function(error){
+        res.send("Hi, We received your message!");
+        res.end();
+    })
+    
 })
 
 
