@@ -32,3 +32,14 @@ section{
 .center{
   text-align: center;
 }
+
+header{
+  padding: 20px;
+  text-align: center;
+}
+
+.toplink{
+  margin-right: 40px;
+  font-size: 22px;
+  /* color: white; */
+}

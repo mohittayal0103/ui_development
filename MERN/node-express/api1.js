@@ -25,7 +25,6 @@ app.get("/booklist", (req, res) => {
     { name: "CSS", cost: 6666, author: "Alex" },
     { name: "NODE", cost: 7777, author: "Alex" },
     { name: "PHP", cost: 33333, author: "Alex" },
-    { name: "REACT", cost: 77777, author: "Alex" },
   ];
   let jsonData = JSON.stringify(allbook); // array to json
   res.send(jsonData);
