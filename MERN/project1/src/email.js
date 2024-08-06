@@ -18,9 +18,9 @@ const Email = () => {
         body:JSON.stringify(emailData)
     }
     fetch(url, postData)
-    .then(response=>response.json())
+    .then(response=>response.text())
     .then(info=>{
-        alert(info.message);
+        alert(info);
     })
   }
 

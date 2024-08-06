@@ -35,9 +35,8 @@ app.get("/booklist", (req, res) => {
 const fs = require("fs");
 
 app.post("/savemsg", (req, res) => {
-
-    const d = new Date();
-    let time = d.toLocaleString();
+  const d = new Date();
+  let time = d.toLocaleString();
 
   let message = time + " - " + req.body.newmsg + " #\n";
   fs.appendFile("allmessage.txt", message, function (error) {
@@ -52,6 +51,43 @@ app.get("/messagelist", (req, res) => {
     res.send(data);
     res.end();
   });
+});
+
+app.post("/sendmail", (req, res) => {
+  let toemail = req.body.emailid;
+  let subject = req.body.subject;
+  let message = req.body.message;
+  //email sending code start
+  var nodemailer = require("nodemailer");
+
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "mohittayal0103@gmail.com",
+      pass: "lbcq mrmt rlen yzuh",
+    },
+  });
+
+  var mailOptions = {
+    from: "mohittayal0103@gmail.com",
+    to: toemail,
+    subject: subject,
+    text: message,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      res.send("Error while sending email...");
+      res.end();
+    } else {
+      res.send("Email sent successfully...")
+      res.end();
+    }
+  });
+
+  //email sending code end
+  // res.send(toemail + subject  + message);
+  // res.end();
 });
 
 app.listen(2222, function () {
